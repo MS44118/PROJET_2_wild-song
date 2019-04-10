@@ -9,7 +9,7 @@ Application Web / Mobile locate and display all the musical events and save our 
 ## Getting Started
 
 
-### Prerequisites
+### Copy and Run the project on your local machine
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
@@ -25,8 +25,9 @@ cd /nantes-0219-js-wild-song
 npm install
 ```
 
-Create your API Key File:
-THIS NEED IMPROVEMENT!!! **/src/config.js to include the API Key from SongKick:** 
+### Create your API Key File:
+
+**THIS NEED IMPROVEMENT!!! /src/config.js to include the API Key from SongKick:** 
 ```
 const apiKey = ""; 
 ```
@@ -39,7 +40,7 @@ npm install react-materialize
 ```
 
 
-THIS NEED IMPROVEMENT!!!**End with an example of getting some data out of the system or using it for a little demo**
+**THIS NEED IMPROVEMENT!!! End with an example of getting some data out of the system or using it for a little demo**
 
 
 
@@ -71,11 +72,11 @@ THIS NEED IMPROVEMENT!!!**End with an example of getting some data out of the sy
 
 ## Running the tests
 
-THIS NEED IMPROVEMENT!!!**Explain how to run the automated tests for this system**
+**THIS NEED IMPROVEMENT!!! Explain how to run the automated tests for this system**
 
 ### Break down into end to end tests
 
-THIS NEED IMPROVEMENT!!!**Explain what these tests test and why**
+**THIS NEED IMPROVEMENT!!! Explain what these tests test and why**
 
 ```
 Give an example
@@ -83,7 +84,7 @@ Give an example
 
 ### And coding style tests
 
-THIS NEED IMPROVEMENT!!!**Explain what these tests test and why**
+**THIS NEED IMPROVEMENT!!! Explain what these tests test and why**
 
 ```
 Give an example
@@ -114,7 +115,7 @@ See also the list of [contributors](https://github.com/WildCodeSchool/nantes-021
 
 ## License
 
-THIS NEED IMPROVEMENT!!!**This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details**
+**THIS NEED IMPROVEMENT!!! This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details**
 
 ## Acknowledgments
 
@@ -125,6 +126,6 @@ THIS NEED IMPROVEMENT!!!**This project is licensed under the MIT License - see t
 
 # need help to layout your README.md ? 
 
-Check **Billie Thompson** *Initial work* - [https://gist.github.com/PurpleBooth/109311bb0361f32d87a2#file-readme-template-md]
+Check **Billie Thompson** work - [https://gist.github.com/PurpleBooth/109311bb0361f32d87a2#file-readme-template-md]
 
 
