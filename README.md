@@ -13,27 +13,15 @@ Application Web / Mobile locate and display all the musical events and save our 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
-clone the repository:
+- Clone the repository
+- Create your branch (name of your Branch is the name of your Component)
+- Go to your project directory
+- Install node_modules listed in package.json
 
 ```
 git clone [https://github.com/WildCodeSchool/nantes-0219-js-wild-song.git]
-```
-
-Create your branch (name of your Branch is the name of your Component):
-
-```
 git checkout -b BranchComponent
-```
-
-Go to your project directory:
-
-```
 cd /nantes-0219-js-wild-song 
-```
-
-Install node_modules listed in package.json:
-
-```
 npm install
 ```
 
@@ -45,8 +33,10 @@ const apiKey = "";
 
 
 if Materialize is not in package.json:
-- npm install materialize-css
-- npm install react-materialize
+```
+npm install materialize-css
+npm install react-materialize
+```
 
 
 THIS NEED IMPROVEMENT!!!**End with an example of getting some data out of the system or using it for a little demo**
