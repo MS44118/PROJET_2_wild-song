@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../node_modules/materialize-css/dist/css/materialize.min.css'
-// import M from '../node_modules/materialize-css/dist/js/materialize.js';
+import M from '../node_m/odules/materialize-css/dist/js/materialize.js';
 import './App.css';
 import Geolocation from './Components/Geolocation/Geolocation';
 
