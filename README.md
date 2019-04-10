@@ -8,23 +8,52 @@ Application Web / Mobile locate and display all the musical events and save our 
 
 ## Getting Started
 
+
+### Prerequisites
+
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
-*See deployment for notes on how to deploy the project on a live system.*
-- clone the repo </br>
-- git checkout -b NameOfYourBranchIsTheNameOfTheComponent 
-- cd /nantes-0219-js-wild-song 
-- npm install (to install node_modules listed in package.json) 
-- create file /src/config.js to include the API Key from SongKick
+
+clone the repository:
+
+```
+git clone [https://github.com/WildCodeSchool/nantes-0219-js-wild-song.git]
+```
+
+Create your branch (name of your Branch is the name of your Component):
+
+```
+git checkout -b BranchComponent
+```
+
+Go to your project directory:
+
+```
+cd /nantes-0219-js-wild-song 
+```
+
+Install node_modules listed in package.json:
+
+```
+npm install
+```
+
+Create your API Key File:
+THIS NEED IMPROVEMENT!!! **/src/config.js to include the API Key from SongKick:** 
 ```
 const apiKey = ""; 
 ```
+
 
 if Materialize is not in package.json:
 - npm install materialize-css
 - npm install react-materialize
 
 
-### Goal : 
+THIS NEED IMPROVEMENT!!!**End with an example of getting some data out of the system or using it for a little demo**
+
+
+
+### Goal of this project: 
 - Show music events around you with geoloc
 - Show data of event and button for reservation
 - Save / Remove in navigator your favorites event
@@ -33,11 +62,11 @@ if Materialize is not in package.json:
 - (bonus: Create an alert when the event starts soon)
 
 
-### Technical instruction :
+### Technical instruction from our client:
 - React
 - Song Kick API
 - React Materialize
-- Smartphone friendly
+- **Smartphone friendly**
 
 
 ### End project skills :
@@ -50,40 +79,13 @@ if Materialize is not in package.json:
 
 
 
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Running the tests
 
-Explain how to run the automated tests for this system
+THIS NEED IMPROVEMENT!!!**Explain how to run the automated tests for this system**
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+THIS NEED IMPROVEMENT!!!**Explain what these tests test and why**
 
 ```
 Give an example
@@ -91,39 +93,38 @@ Give an example
 
 ### And coding style tests
 
-Explain what these tests test and why
+THIS NEED IMPROVEMENT!!!**Explain what these tests test and why**
 
 ```
 Give an example
 ```
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [React](https://reactjs.org/) - A JavaScript library for building user interfaces
+* [Materialize](https://react-materialize.github.io/) - A modern responsive front-end framework based on Material Design
+* [Songkick API](https://www.songkick.com/developer) - Gives you easy access to the biggest live music database in the world
+
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [BLABLA.md](https://blabla.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Baptiste** - *Initial work* - [Wild Code School](https://wildcodeschool.fr/)
+* **Cedric** - *Initial work* - [Wild Code School](https://wildcodeschool.fr/)
+* **Maelenn** - *Initial work* - [Wild Code School](https://wildcodeschool.fr/)
+* **Samantha** - *Initial work* - [Wild Code School](https://wildcodeschool.fr/)
+* **Tanguy** - *Initial work* - [Wild Code School](https://wildcodeschool.fr/)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/WildCodeSchool/nantes-0219-js-wild-song/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+THIS NEED IMPROVEMENT!!!**This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details**
 
 ## Acknowledgments
 
@@ -132,6 +133,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * etc
 
 
-```
-need help to layout your README.md?: [https://gist.github.com/PurpleBooth/109311bb0361f32d87a2#file-readme-template-md]
-```
+# need help to layout your README.md ? 
+
+Check **Billie Thompson** *Initial work* - [https://gist.github.com/PurpleBooth/109311bb0361f32d87a2#file-readme-template-md]
+
+
