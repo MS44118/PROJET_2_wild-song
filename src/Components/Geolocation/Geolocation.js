@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Geolocation.css'
+
 class Geolocation extends Component{
   constructor(){
     super();
@@ -43,7 +44,7 @@ class Geolocation extends Component{
           >
             Geolocalisez-moi
           </button>
-          <p>Nous t\'avons trouver ici: {this.state.latUser}  {this.state.lngUser} </p>
+          <p>Nous t'avons trouver ici: {this.state.latUser}  {this.state.lngUser} </p>
         </figure>
       </div>
     )
@@ -52,5 +53,3 @@ class Geolocation extends Component{
 }
 
 export default Geolocation;
-
-// navigator.geolocation.getCurrentPosition(success[, error[, [options]])
