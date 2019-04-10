@@ -43,7 +43,7 @@ class Geolocation extends Component{
           >
             Geolocalisez-moi
           </button>
-          <p>Nous t'avons trouver ici: {this.state.latUser}  {this.state.lngUser} </p>
+          <p>Nous t\'avons trouver ici: {this.state.latUser}  {this.state.lngUser} </p>
         </figure>
       </div>
     )
