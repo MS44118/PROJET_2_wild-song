@@ -25,23 +25,24 @@ cd /nantes-0219-js-wild-song
 npm install
 ```
 
-### Create your API Key File:
-
-**THIS NEED IMPROVEMENT!!! /src/config.js to include the API Key from SongKick:** 
-```
-const apiKey = ""; 
-```
-
-
 if Materialize is not in package.json:
 ```
 npm install materialize-css
 npm install react-materialize
 ```
 
+**THIS NEED IMPROVEMENT!!!**
+**End with an example of getting some data out of the system or using it for a little demo**
 
-**THIS NEED IMPROVEMENT!!! End with an example of getting some data out of the system or using it for a little demo**
 
+
+### Create your API Key File:
+
+**THIS NEED IMPROVEMENT!!!**
+**src/config.js to include the API Key from SongKick:** 
+```
+const apiKey = ""; 
+```
 
 
 ### Goal of this project: 
@@ -72,11 +73,13 @@ npm install react-materialize
 
 ## Running the tests
 
-**THIS NEED IMPROVEMENT!!! Explain how to run the automated tests for this system**
+**THIS NEED IMPROVEMENT!!!**
+**Explain how to run the automated tests for this system**
 
 ### Break down into end to end tests
 
-**THIS NEED IMPROVEMENT!!! Explain what these tests test and why**
+**THIS NEED IMPROVEMENT!!!**
+**Explain what these tests test and why**
 
 ```
 Give an example
@@ -84,7 +87,8 @@ Give an example
 
 ### And coding style tests
 
-**THIS NEED IMPROVEMENT!!! Explain what these tests test and why**
+**THIS NEED IMPROVEMENT!!!**
+**Explain what these tests test and why**
 
 ```
 Give an example
@@ -115,7 +119,8 @@ See also the list of [contributors](https://github.com/WildCodeSchool/nantes-021
 
 ## License
 
-**THIS NEED IMPROVEMENT!!! This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details**
+**THIS NEED IMPROVEMENT!!!**
+**This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details**
 
 ## Acknowledgments
 
