@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import { Icon} from "react-materialize";
+import { Icon, Modal, Button} from "react-materialize";
+
+
+
 
 
 class Help extends Component {
@@ -21,13 +24,21 @@ class Help extends Component {
 
     render() {
       return (
+      <div>
+        <Button onClick ={this.handleShowModalHelpOnClick} href="#modal1" className="modal-trigger" >
+          {this.state.showModalHelp ? "help" : "add"}
+        </Button>
 
-          <Icon onClick ={this.handleShowModalHelpOnClick} >
-            {this.state.showModalHelp ? "help" : "add"}
-            {this.state.showModalHelp ? "yes" : "no"}
-           
-          </Icon>
+        <Icon href="#modal1" className="modal-trigger">
+          help
+        </Icon>
+        <Modal id="modal1" header="Modal Header">
+          Lorem ipsum dolor sit amet
+        </Modal>
 
+
+      </div>
+        
         
       );
       
