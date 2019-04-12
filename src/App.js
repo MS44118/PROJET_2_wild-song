@@ -8,6 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <img src="./images/logo.png"></img>
         <Geolocation />
       </div>
     );
