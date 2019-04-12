@@ -20,11 +20,14 @@ class Help extends Component {
   render() {
     return (
     <div>
-      <Button onClick ={this.handleShowModalHelpOnClick} href="#modal1" className="modal-trigger" >
+
+      <Button href="#modal1" className="modal-trigger" onClick ={this.handleShowModalHelpOnClick}  >
         {this.state.showModalHelp ? "help" : "add"}
       </Button>
-      <Icon href="#modal1" className="modal-trigger">
+      
+      <Icon href="#modal1" className="modal-trigger" onClick ={this.handleShowModalHelpOnClick}>
         help
+        {this.state.showModalHelp ? "help" : "add"}
       </Icon>
       <Modal id="modal1" header="Modal Header">
         Lorem ipsum dolor sit amet
