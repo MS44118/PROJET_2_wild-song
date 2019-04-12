@@ -1,0 +1,17 @@
+.separate {
+  border-bottom: solid 1px black; 
+}
+
+.marge {
+  margin-top: 2rem;
+}
+
+.less {
+  height: 8rem;
+  overflow: hidden;
+}
+
+img {
+  width: 7em;
+  height: 7em;
+}
