@@ -6,8 +6,6 @@ import Help from './components/help';
 
 class NavBar extends Component {
     render() {
-        
-      
       return (
         
         <Navbar  brand={<a />}  alignLinks="right" className ="orange darken-2">
