@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Event.css';
 import { Icon } from 'react-materialize';
+
 const Event = (props) => {
 
 	const [otherClass, setOtherClass] = useState({key: true});
@@ -27,25 +28,7 @@ const Event = (props) => {
 				<div className="offset-s2 col s3"><a className="light-blue accent-2 btn" href="#"><Icon>star_border</Icon></a></div>
 			</div>
 		</div>
-	)
+	);
 }
 
 export default Event;
-
-{/* 
-import Event from './Components/Event/Event.js';
-
-<div className="row">
-	<div className="col s12 m6 l4"><Event/></div>
-	<div className="col s12 m6 l4"><Event/></div>
-	<div className="col s12 m6 l4"><Event/></div>
-	<div className="col s12 m6 l4"><Event/></div>
-	<div className="col s12 m6 l4"><Event/></div>
-	<div className="col s12 m6 l4"><Event/></div>
-	<div className="col s12 m6 l4"><Event/></div>
-	<div className="col s12 m6 l4"><Event/></div>
-	<div className="col s12 m6 l4"><Event/></div>
-	<div className="col s12 m6 l4"><Event/></div>
-	<div className="col s12 m6 l4"><Event/></div>
-	<div className="col s12 m6 l4"><Event/></div>
-</div> */}
