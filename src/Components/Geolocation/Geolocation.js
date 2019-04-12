@@ -1,55 +1,58 @@
 import React, { Component } from 'react';
 import './Geolocation.css'
+import config from '../../config';
 
 class Geolocation extends Component{
   constructor(){
     super();
     this.state = {
-      latUser: 0,
-      lngUser: 0
-    }
+      songkick: null,
+    };
   };
 
-  getGeolocation = () => {
+  // componentDidMount s'effectue une seule fois au lancement du composant Geolocation (et pas qd click button)
+  getLocation = () => { 
     navigator.geolocation.getCurrentPosition(
-      (position) => { 
-        //return an object with keys: latitude, longitude, altitude, accuracy(meters), altitude accuracy, heading(moving direction), speed)
-        this.setState({
-          latUser: position.coords.latitude,
-          lngUser: position.coords.longitude,
+      (position) => { //return an object with latitude, longitude, and cie
+        // IMPLEMENT THERE THE LOADING ANIMATION ------------------------
+        fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&location=geo:${position.coords.latitude},${position.coords.longitude}`)
+        .then(data => data.json())
+        .then((data) => { 
+          // console.log("API result:")
+          // console.log(data); //resultat API call
+          this.setState({
+            songkick: data.resultsPage.results,
+          })
+          console.log(this.state.songkick.event[14].location.city);
+          console.log(this.state.songkick)
         })
-        console.log(this.state);
-      },
-      (error) => {
-        //return a value (1=permission denied, 2=position unavailable, 3=timeout)
-        console.log(error); 
       }
-      // ,
-      // (options) => { 
-      //     enableHighAccuracy: true; //(boolean) true = high precision required to geolocate
-      //     timeout: 5000;            // (milliseconds, integer) maximum time to receive geolocation
-      //     maximumAge: 100000;        //(milliseconds, integer) how long do we keep the geolocation (dans le cache)
-      // }
+      ,
+      (error) => {
+        console.log(error); //return a value (1=permission denied, 2=position unavailable, 3=timeout)
+      }
     );
-  };
+  };  
 
   render(){
     return (
       <div>
         <figure>
-          <p>Pour te donner les événements qui vont se dérouller autour de toi, nous avons besoin de te geolocaliser.</p>
+          <p>Pour te donner les événements qui vont se dérouler autour de toi, </p>
+          <p>nous avons besoin de te géolocaliser.</p>
           <button 
             className="waves-effect waves-light btn-large"
-            onClick={this.getGeolocation}
+            onClick={this.getLocation}
           >
             Geolocalisez-moi
           </button>
-          <p>Nous t'avons trouver ici: {this.state.latUser}  {this.state.lngUser} </p>
+          <p>nous allons te donner les evenements pour: </p>
+          <p>{this.state.songkick ? this.state.songkick.event[0].location.city : " Non géolocalisé"} </p>
         </figure>
       </div>
     )
   };
-
-}
+};
 
 export default Geolocation;
+
