@@ -3,7 +3,8 @@ import '../node_modules/materialize-css/dist/css/materialize.min.css'
 import './App.css';
 import NavBar from './Components/NavBar/NavBar.js'
 import Geolocation from './Components/Geolocation/Geolocation';
-//import M from '../node_modules/materialize-css/dist/js/materialize.js';
+//import EventModal from './Components/EventModal/EventModal'
+import M from '../node_modules/materialize-css/dist/js/materialize.js';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <Geolocation />
+        {/* <EventModal /> */}
       </div>
     );
   };
