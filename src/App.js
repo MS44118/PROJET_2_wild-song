@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <img src={logo} alt="logo LivinSound" />
+        <img className="App-logo" src={logo} alt="logo LivinSound" />
         <Geolocation />
         {/* <EventModal /> */}
       </div>

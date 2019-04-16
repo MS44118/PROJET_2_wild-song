@@ -42,10 +42,9 @@ class Geolocation extends Component{
 
   render(){
     return (
-      <div>
+      <div className="geoloc-display">
         <figure>
-          <p>Pour rechercher les événements autour de toi, </p>
-          <p>nous avons besoin de te géolocaliser.</p>
+          <p>Pour rechercher les événements autour de toi, nous avons besoin de te géolocaliser.</p>
           <button 
             className="waves-effect waves-light btn-large"
             onClick={this.getLocation}
