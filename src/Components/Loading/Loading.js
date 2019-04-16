@@ -8,15 +8,17 @@ class Loading extends Component {
  
   render() {
     return (
-     <Container>
-      <div id="preloader_1" >
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+      <div>
+        <Container>
+          <div id="preloader_1" >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </Container>
       </div>
-      </Container>
     );
   }
 }
