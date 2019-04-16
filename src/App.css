@@ -1,3 +1,19 @@
+/* VARIABLES CSS*/
+:root {
+  --main-bg-color: #f57c00;
+  --second-bg-color: #ff9800;
+  --third-bg-color: #ffb74d;
+  --button-bg-color: #40c4ff;
+}
+
+
+
+
+
+
+
+
+/*CSS basic from React*/
 .App {
   text-align: center;
 }
