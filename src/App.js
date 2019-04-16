@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Loading from "../src/Components/Loading/Loading";
 import '../node_modules/materialize-css/dist/css/materialize.min.css'
-import M from '../node_modules/materialize-css/dist/js/materialize.js';
+import '../node_modules/materialize-css/dist/js/materialize.js';
 
 class App extends Component {
   render() {
