@@ -4,6 +4,7 @@ import './App.css';
 import NavBar from './Components/NavBar/NavBar.js'
 import Geolocation from './Components/Geolocation/Geolocation';
 //import EventModal from './Components/EventModal/EventModal'
+// eslint-disable-next-line
 import M from '../node_modules/materialize-css/dist/js/materialize.js';
 import logo from './images/logo.png';
 
