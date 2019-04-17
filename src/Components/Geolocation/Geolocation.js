@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Geolocation.css'
 import config from '../../config';
+import EventModal from "../EventModal/EventModal";
 
 class Geolocation extends Component{
   constructor(){
@@ -23,8 +24,6 @@ class Geolocation extends Component{
           this.setState({
             songkick: data.resultsPage.results,
           })
-          console.log(this.state.songkick.event[14].location.city);
-          console.log(this.state.songkick)
         })
       }
       ,
@@ -42,13 +41,12 @@ class Geolocation extends Component{
           <p>nous avons besoin de te géolocaliser.</p>
           <button 
             className="waves-effect waves-light btn-large"
-            onClick={this.getLocation}
-          >
+            onClick={this.getLocation} >
             Geolocalisez-moi
           </button>
           <p>nous allons te donner les evenements pour: </p>
-          <p>{this.state.songkick ? this.state.songkick.event[0].location.city : " Non géolocalisé"} </p>
-        </figure>
+          <p>{this.state.songkick ? <EventModal resultApi={this.state.songkick}/> : " Non géolocalisé"} </p>
+        </figure >
       </div>
     )
   };

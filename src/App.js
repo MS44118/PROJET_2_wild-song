@@ -6,6 +6,7 @@ import Geolocation from './Components/Geolocation/Geolocation';
 //import EventModal from './Components/EventModal/EventModal'
 import M from '../node_modules/materialize-css/dist/js/materialize.js';
 
+
 class App extends Component {
   render() {
     return (
