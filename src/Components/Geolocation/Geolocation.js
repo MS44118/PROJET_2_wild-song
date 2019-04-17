@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Geolocation.css'
+import './Geolocation.css';
 import config from '../../config';
 
 class Geolocation extends Component{
@@ -41,12 +41,12 @@ class Geolocation extends Component{
           <p>Pour te donner les événements qui vont se dérouler autour de toi, </p>
           <p>nous avons besoin de te géolocaliser.</p>
           <button 
-            className="waves-effect waves-light btn-large"
+            className="waves-effect waves-light btn-large buttonColor"
             onClick={this.getLocation}
           >
-            Geolocalisez-moi
+            Géolocalisez-moi
           </button>
-          <p>nous allons te donner les evenements pour: </p>
+          <p>Nous allons te donner les évènements pour: </p>
           <p>{this.state.songkick ? this.state.songkick.event[0].location.city : " Non géolocalisé"} </p>
         </figure>
       </div>
