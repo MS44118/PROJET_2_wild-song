@@ -10,6 +10,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 90%;
+  /* max-width: 100vmin; */
 }
 
 .App-header {
