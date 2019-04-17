@@ -1,33 +1,34 @@
 import React, { Component } from "react";
 import { Select, Button, Modal } from "react-materialize";
 
-class Favori extends Component {
+class Filter extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      showFavori : false,
+      showFilter : false,
     };
   }
-  showFavoriMenu = () => {
+  //here we find the method to display the modal filter
+  showFilteredMenu = () => {
     this.setState({
-      showFavori: !this.state.showFavori
+      showFilter: !this.state.showFilter
     });
   }
   render() {
     return (
       <div>
         <Button
-         icon="star_border"
+         icon="filter_list"
          flat waves="light" //cache le button
          node="a" //to create/activate the href
-         href="#modal3"
+         href="#modal2"
          floating //round button
          large //size
          className="modal-trigger transparent"  // MODIFIER AVEC LA VARIABLE CSS ---------------
-         onClick={this.state.showFavori ? "Favori_list" : "add"}
+         onClick={this.state.showFilter ? "filter_list" : "add"}
        >
        </Button>
-        <Modal id="modal3" header="Bienvenue dans la recherche">
+        <Modal id="modal2" header="Bienvenue dans la recherche"> 
           <Select onChange={this.onChange}>
             <option value="" disabled selected>
             Choose your option
@@ -48,4 +49,4 @@ class Favori extends Component {
     }
 }
   
-  export default Favori;
+  export default Filter;

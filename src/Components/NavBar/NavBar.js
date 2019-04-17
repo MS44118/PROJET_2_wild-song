@@ -1,26 +1,28 @@
 import React, { Component } from "react";
 import { Navbar, NavItem, Icon } from "react-materialize";
 import Favoris from './components/Favoris';
-import Help from './components/help';
+import Help from './components/Help';
+import Filter from './components/Filter';
+
 
 class NavBar extends Component {
   render() {
     return (
       <Navbar  brand={<a />}  alignLinks="right" className="orange darken-2">
-        <NavItem href="get-started.html">
+        <NavItem>
           <Favoris />
         </NavItem>
-        <NavItem href="get-started.html">
+        <NavItem>
           <Icon>
-            filtre
+            <Filter />
           </Icon>
         </NavItem>
-        <NavItem href="get-started.html">
+        <NavItem>
           <Icon>
             search
           </Icon>
         </NavItem>
-        <NavItem href="get-started.html">
+        <NavItem >
           <Help />
         </NavItem>
       </Navbar>
