@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* VARIABLES CSS*/
 :root {
   --main-bg-color: #f57c00;
@@ -9,9 +8,6 @@
 
 /*CSS basic from React*/
 .App {
-=======
-/*.App {
->>>>>>> Loading
   text-align: center;
 }
 
@@ -49,4 +45,3 @@
     transform: rotate(360deg);
   }
 }
-*/
