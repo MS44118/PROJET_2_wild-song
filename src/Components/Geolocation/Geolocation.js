@@ -14,16 +14,12 @@ class Geolocation extends Component{
   // componentDidMount s'effectue une seule fois au lancement du composant Geolocation (et pas qd click button)
   getLocation = () => { 
     navigator.geolocation.getCurrentPosition(
-      (position) => { //return an object with latitude, longitude, and cie
+      (position) => { //return an object with latitude, longitude, & cie
         // IMPLEMENT THERE THE LOADING ANIMATION ------------------------
         fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&location=geo:${position.coords.latitude},${position.coords.longitude}`)
         .then(data => data.json())
         .then((data) => { 
-          // console.log("API result:")
-          // console.log(data); //resultat API call
           this.setState({ songkick: data.resultsPage.results, })
-          console.log(this.state.songkick.event[14].location.city);
-          console.log(this.state.songkick);
         })
       }
       ,
@@ -51,7 +47,6 @@ class Geolocation extends Component{
           >
             Geolocalisez-moi
           </button>
-          {/* <p>nous allons te donner les evenements pour: </p> */}
           <p>{this.state.songkick 
             ? this.state.songkick.event[0].location.city 
             : this.state.errorLog} </p>

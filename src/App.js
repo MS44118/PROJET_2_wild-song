@@ -8,7 +8,6 @@ import Geolocation from './Components/Geolocation/Geolocation';
 import M from '../node_modules/materialize-css/dist/js/materialize.js';
 import logo from './Images/logo.png';
 
-
 class App extends Component {
   render() {
     return (
@@ -16,7 +15,6 @@ class App extends Component {
         <NavBar />
         <img className="App-logo" src={logo} alt="logo LivinSound" />
         <Geolocation />
-        {/* <EventModal /> */}
       </div>
     );
   };
