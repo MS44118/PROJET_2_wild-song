@@ -1,3 +1,7 @@
 figure{
   border: solid 1px;
 }
+
+.none {
+  display: none;
+}

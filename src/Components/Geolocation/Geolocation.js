@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import EventModal from '../EventModal/EventModal';
 import './Geolocation.css';
 import config from '../../config';
 
@@ -7,6 +8,7 @@ class Geolocation extends Component{
     super();
     this.state = {
       songkick: null,
+      contentModal: null,
     };
   }
 
@@ -18,13 +20,10 @@ class Geolocation extends Component{
         fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&location=geo:${position.coords.latitude},${position.coords.longitude}`)
         .then(data => data.json())
         .then((data) => { 
-          // console.log("API result:")
-          // console.log(data); //resultat API call
           this.setState({
             songkick: data.resultsPage.results,
+            contentModal: <EventModal events={data.resultsPage.results.event} />,
           })
-          console.log(this.state.songkick.event[14].location.city);
-          console.log(this.state.songkick);
         })
       }
       ,
@@ -38,14 +37,9 @@ class Geolocation extends Component{
     return (
       <div>
         <figure>
-          <p>Pour te donner les événements qui vont se dérouler autour de toi, </p>
-          <p>nous avons besoin de te géolocaliser.</p>
-          <button 
-            className="waves-effect waves-light btn-large"
-            onClick={this.getLocation}
-          >
-            Geolocalisez-moi
-          </button>
+          <p>Pour te donner les événements qui vont se dérouler autour de toi, nous avons besoin de te géolocaliser.</p>
+          <button className={`waves-effect waves-light btn-large ${this.state.contentModal ? 'none' : ''}`} onClick={this.getLocation}> Geolocalisez-moi </button>
+          {this.state.contentModal}
           <p>nous allons te donner les evenements pour: </p>
           <p>{this.state.songkick ? this.state.songkick.event[0].location.city : " Non géolocalisé"} </p>
         </figure>
