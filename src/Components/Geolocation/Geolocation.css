@@ -1,3 +1,6 @@
+button {
+  background-color: var(--button-bg-color) !important;
+}
 .geoloc-display{
   width: 80%;
   margin: auto;
