@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Geolocation.css'
+import './Geolocation.css';
 import config from '../../config';
 import EventModal from "../EventModal/EventModal";
 
@@ -9,7 +9,7 @@ class Geolocation extends Component{
     this.state = {
       songkick: null,
     };
-  };
+  }
 
   // componentDidMount s'effectue une seule fois au lancement du composant Geolocation (et pas qd click button)
   getLocation = () => { 
@@ -31,7 +31,7 @@ class Geolocation extends Component{
         console.log(error); //return a value (1=permission denied, 2=position unavailable, 3=timeout)
       }
     );
-  };  
+  }
 
   render(){
     return (
@@ -48,9 +48,9 @@ class Geolocation extends Component{
           <p>{this.state.songkick ? <EventModal resultApi={this.state.songkick}/> : " Non géolocalisé"} </p>
         </figure >
       </div>
-    )
-  };
-};
+    );
+  }
+}
 
 export default Geolocation;
 
