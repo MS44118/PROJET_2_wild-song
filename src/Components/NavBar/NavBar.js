@@ -4,11 +4,10 @@ import Favoris from './components/Favoris';
 import Help from './components/Help';
 import Filter from './components/Filter';
 
-
 class NavBar extends Component {
   render() {
     return (
-      <Navbar  brand={<a />}  alignLinks="right" className="orange darken-2">
+      <Navbar brand={<a />} alignLinks="right" className="orange darken-2">
         <NavItem>
           <Favoris />
         </NavItem>
@@ -29,5 +28,5 @@ class NavBar extends Component {
     );
   }
 }
-  
+
 export default NavBar;

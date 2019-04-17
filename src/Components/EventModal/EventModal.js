@@ -4,11 +4,7 @@ import Event from "../Event/Event";
 
 // This component call the component Event for display as many times as there is a geolocate event
 class EventModal extends Component {
-  constructor(props) {
-    super();
-  };
-
-  render() {
+   render() {
     let resultEventsApi = this.props.events;
 
     return (
