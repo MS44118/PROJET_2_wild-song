@@ -1,4 +1,8 @@
+# HOW TO USE VAR IN CSS
+It's pretty easy, you just have to put in css: var(--name-of-color).
+Look at the color palette the first color is : var(--main-bg-color), the second color var(--second-bg-color), the third var(--third-bg-color), and for the "saillance" color var(--button-bg-color).
 
+You can ask Baptiste if you have any problems with variable in CSS.
 
 
 

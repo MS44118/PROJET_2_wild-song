@@ -1,11 +1,26 @@
+/* VARIABLES CSS*/
+:root {
+  --main-bg-color: #f57c00;
+  --second-bg-color: #ff9800;
+  --third-bg-color: #ffb74d;
+  --button-bg-color: #40c4ff;
+}
+
+/*CSS basic from React*/
 .App {
   text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+  /* animation: App-logo-spin infinite 20s linear; */
+  /* height: 40vmin; */
+  /* pointer-events: none; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  height: 30%;
+  /* max-width: 100vmin; */
 }
 
 .App-header {
