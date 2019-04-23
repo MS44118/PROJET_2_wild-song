@@ -46,10 +46,14 @@ class Geolocation extends Component{
       <div className="geoloc-display">
         <figure>
           <p>Pour te donner les événements qui vont se dérouler autour de toi, nous avons besoin de te géolocaliser.</p>
-          <button className={`waves-effect waves-light btn-large ${this.state.contentModal ? 'none' : ''}`} onClick={this.getLocation}> Geolocalisez-moi </button>
+          <button 
+            className={`waves-effect waves-light btn-large ${this.state.contentModal ? 'none' : ''}`} 
+            onClick={this.getLocation}
+          > Geolocalisez-moi 
+          </button>
           {this.state.contentModal}
-          <p>nous allons te donner les evenements pour: </p>
-          <p>{this.state.songkick ? this.state.songkick.event[0].location.city : this.state.errorLog} </p>
+          <p> {this.state.songkick ? this.state.songkick.event[0].location.city : `` } </p> 
+          <p> {this.state.errorLog ? this.state.errorLog : ``} </p> // A TERMINER LA MISE EN FORME du ERRORLOG
         </figure>
       </div>
     );
