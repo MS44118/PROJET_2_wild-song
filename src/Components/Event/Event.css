@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-img {
+img .imgEvent{
   width: 7em;
   height: 7em;
 }

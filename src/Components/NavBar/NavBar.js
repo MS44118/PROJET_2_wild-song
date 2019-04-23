@@ -3,6 +3,7 @@ import { Navbar, NavItem, Icon } from "react-materialize";
 import Favoris from '../Favoris/Favoris';
 import Help from '../Help/Help';
 import Filter from '../Filter/Filter';
+import logo from '../../Images/LivinSoundTransp.png';
 
 class NavBar extends Component {
   render() {
