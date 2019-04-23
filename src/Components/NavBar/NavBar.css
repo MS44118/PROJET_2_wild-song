@@ -1,0 +1,11 @@
+.nav-wrapper {
+  background-color: var(--main-bg-color) !important;
+}
+
+.sidenav {
+  background-color: var(--second-bg-color) !important;
+}
+
+/* nav > ul > li {
+
+} */
