@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Navbar, NavItem, Icon } from "react-materialize";
-import Favoris from './components/Favoris';
-import Help from './components/Help';
-import Filter from './components/Filter';
+import Favoris from '../Favoris/Favoris';
+import Help from '../Help/Help';
+import Filter from '../Filter/Filter';
 
 class NavBar extends Component {
   render() {
