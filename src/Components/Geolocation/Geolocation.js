@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import EventModal from '../EventModal/EventModal';
 import './Geolocation.css';
 import config from '../../config';
+import Loading from "../Loading/Loading";
+
 
 class Geolocation extends Component{
   constructor(){
@@ -10,6 +12,7 @@ class Geolocation extends Component{
       songkick: null,
       contentModal: null,
       errorLog: null,
+      loading: false,
     };
   }
 
@@ -18,13 +21,16 @@ class Geolocation extends Component{
     navigator.geolocation.getCurrentPosition(
       (position) => { //return an object with latitude, longitude, & cie
         // IMPLEMENT THERE THE LOADING ANIMATION ------------------------
-        fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&location=geo:${position.coords.latitude},${position.coords.longitude}`)
-        .then(data => data.json())
-        .then((data) => { 
-          this.setState({
-            songkick: data.resultsPage.results,
-            contentModal: <EventModal events={data.resultsPage.results.event} />,
+        this.setState({loading: true},() => {
+          fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&location=geo:${position.coords.latitude},${position.coords.longitude}`)
+          .then(data => data.json())
+          .then((data) => { 
+            this.setState({
+              songkick: data.resultsPage.results,
+              contentModal: <EventModal events={data.resultsPage.results.event} />,
+            })
           })
+          .then(() => this.setState({loading:false}))
         })
       }
       ,
@@ -45,15 +51,16 @@ class Geolocation extends Component{
     return (
       <div className="geoloc-display">
         <figure>
-          <p>Pour te donner les événements qui vont se dérouler autour de toi, nous avons besoin de te géolocaliser.</p>
+          <p>Pour te donner les événements autour de toi, nous avons besoin de te géolocaliser.</p>
           <button 
             className={`waves-effect waves-light btn-large ${this.state.contentModal ? 'none' : ''}`} 
             onClick={this.getLocation}
           > Geolocalisez-moi 
           </button>
           {this.state.contentModal}
-          <p> {this.state.songkick ? this.state.songkick.event[0].location.city : `` } </p> 
-          <p className="error-log"> {this.state.errorLog ? this.state.errorLog : ``} </p> 
+          <p> {this.state.songkick ? this.state.songkick.event[0].location.city : "" } </p> 
+          <p>{this.state.loading ? <Loading /> : ""} </p>
+          <p className="error-log"> {this.state.errorLog ? this.state.errorLog : "" } </p> 
         </figure>
       </div>
     );

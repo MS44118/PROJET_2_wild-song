@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, NavItem, Icon } from "react-materialize";
+import { Navbar, NavItem } from "react-materialize";
 import Favoris from '../Favoris/Favoris';
 import Help from '../Help/Help';
 import Filter from '../Filter/Filter';
