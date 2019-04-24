@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Event.css';
-import { Icon, Col, Row, Button, Offset } from 'react-materialize';
+import { Icon, Button } from 'react-materialize';
 
 const Event = (props) => {
 
@@ -11,7 +11,7 @@ const Event = (props) => {
 		<div className="container separate">
 			<div className="row">
 				<div className="col s4 marge">
-					<img src={`https://images.sk-static.com/images/media/profile_images/artists/${props.image}/huge_avatar`} alt="pic of event"></img>
+					<img className="imgEvent" src={`https://images.sk-static.com/images/media/profile_images/artists/${props.image}/huge_avatar`} alt="pic of event"></img>
 					<p>9.6km</p>
 					<p>{props.date} - {props.time}</p>
 				</div>

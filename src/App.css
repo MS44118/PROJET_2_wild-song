@@ -6,43 +6,32 @@
   --button-bg-color: #40c4ff;
 }
 
+/*MEDIA QUERIES FOR LOGO*/
+
+/*Media for smartphones*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 600px) {
+  .App-logo {
+    width: 25rem;
+    height: 25rem;  
+  }
+}
+/*Media for tablet*/
+@media only screen and (min-device-width : 600px) and (max-device-width : 992px) {
+  .App-logo {
+    width: 40rem;
+    height: 40rem;  
+    }    
+  }
+
+  /*Media for desktop*/
+@media only screen and (min-device-width : 993px) {
+  .App-logo {
+    width: 45rem;
+    height: 45rem;
+    }    
+  }
+
 /*CSS basic from React*/
 .App {
   text-align: center;
-}
-
-.App-logo {
-  /* animation: App-logo-spin infinite 20s linear; */
-  /* height: 40vmin; */
-  /* pointer-events: none; */
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
-  height: 30%;
-  /* max-width: 100vmin; */
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
