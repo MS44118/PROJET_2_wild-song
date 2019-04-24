@@ -5,3 +5,10 @@
 .sidenav {
   background-color: var(--second-bg-color) !important;
 }
+
+.logo {
+  position: absolute;
+  left: 20px;
+  max-width: 80px;
+  max-height: 80px;
+}
