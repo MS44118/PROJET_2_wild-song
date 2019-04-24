@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Event.css';
-import { Icon, Col, Row, Button, Offset } from 'react-materialize';
+import { Icon, Button } from 'react-materialize';
 
 const Event = (props) => {
 
