@@ -4,7 +4,6 @@ import './Geolocation.css';
 import config from '../../config';
 import Loading from "../Loading/Loading";
 
-
 class Geolocation extends Component{
   constructor(){
     super();
@@ -16,11 +15,11 @@ class Geolocation extends Component{
     };
   }
 
-  // componentDidMount s'effectue une seule fois au lancement du composant Geolocation (et pas qd click button)
+  // componentDidMount s'effectue une seule fois au lancement du composant Geolocation 
+  // (et pas quand on clique <button>)
   getLocation = () => { 
     navigator.geolocation.getCurrentPosition(
       (position) => { //return an object with latitude, longitude, & cie
-        // IMPLEMENT THERE THE LOADING ANIMATION ------------------------
         this.setState({loading: true},() => {
           fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&location=geo:${position.coords.latitude},${position.coords.longitude}`)
           .then(data => data.json())
@@ -30,7 +29,9 @@ class Geolocation extends Component{
               contentModal: <EventModal events={data.resultsPage.results.event} />,
             })
           })
-          .then(() => this.setState({loading:false}))
+          .then( () => {
+            setTimeout(()=> this.setState({loading:false}), 3000)
+          })
         })
       }
       ,
@@ -50,6 +51,8 @@ class Geolocation extends Component{
   render(){
     return (
       <div className="geoloc-display">
+        {/* display error message if problem with geoloc:  */}
+        <p className="error-log"> {this.state.errorLog ? this.state.errorLog : "" } </p> 
         <figure>
           <p>Pour te donner les événements autour de toi, nous avons besoin de te géolocaliser.</p>
           <button 
@@ -58,9 +61,10 @@ class Geolocation extends Component{
           > Geolocalisez-moi 
           </button>
           {this.state.contentModal}
+          {/* display city of the first event AFTER API fetch:  */}
           <p> {this.state.songkick ? this.state.songkick.event[0].location.city : "" } </p> 
+          {/* display loading animation WHILE fetching API:  */}
           <p>{this.state.loading ? <Loading /> : ""} </p>
-          <p className="error-log"> {this.state.errorLog ? this.state.errorLog : "" } </p> 
         </figure>
       </div>
     );
@@ -68,4 +72,3 @@ class Geolocation extends Component{
 }
 
 export default Geolocation;
-
