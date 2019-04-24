@@ -53,7 +53,7 @@ class Geolocation extends Component{
           </button>
           {this.state.contentModal}
           <p> {this.state.songkick ? this.state.songkick.event[0].location.city : `` } </p> 
-          <p> {this.state.errorLog ? this.state.errorLog : ``} </p> // A TERMINER LA MISE EN FORME du ERRORLOG
+          <p className="error-log"> {this.state.errorLog ? this.state.errorLog : ``} </p> 
         </figure>
       </div>
     );
