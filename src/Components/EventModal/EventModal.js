@@ -1,13 +1,31 @@
 import React, { Component } from "react";
 import { Modal,Button  } from "react-materialize";
 import Event from "../Event/Event";
+import './EventModal.css'
 
 // This component call the component Event for display as many times as there is a geolocate event
 class EventModal extends Component {
+  constructor(){
+    super();
+    this.state = {
+      getCity: null,
+    };
+  }
+  componentDidMount = () => {
+    fetch(`https://geo.api.gouv.fr/communes?lat=${this.props.location.coords.latitude}&lon=${this.props.location.coords.longitude}&fields=nom&format=json&geometry=centre`)
+    .then(res => res.json())
+    .then((res) => {
+      this.setState({
+        getCity: res,
+      })
+      console.log(res)
+    })
+  }
   render() {
     let resultEventsApi = this.props.events;
     return (
-      <Modal header="Evenement à proximité " trigger={<Button className>Trouver les events</Button>}>
+      <Modal className="modalSize" trigger={<Button>Trouver les events</Button>}>
+        <h2>Evenement a proximite de {this.state.getCity ? this.state.getCity[0].nom : ''}</h2>
         {resultEventsApi.filter((event) => (
           event.performance[0] ? event.performance[0].displayName : ''
         )).map((event) => (
