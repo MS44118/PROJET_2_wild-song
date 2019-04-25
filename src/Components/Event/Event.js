@@ -6,6 +6,8 @@ const Event = (props) => {
 
 	const [otherClass, setOtherClass] = useState({key: true});
 	const [favorite, setFavorite] = useState({star: false});
+
+	let favorisArray =[]
 	let objetFavorieJSON = { // creation de l'objet json pour stocker l'event
 		title: props.title,
 		image: props.image,
@@ -14,53 +16,29 @@ const Event = (props) => {
 		date: props.date,
 		time: props.time,
 		reserveLink: props.reserveLink,
-
-	}//																AIDE APPRENTISSAGE LOCALSTORAGE 
-	// let favorisItem = JSON.stringify(objetFavorieJSON); // transforme objFavorieJson en string json qui stock dans favorisItem
-	// localStorage.setItem('favoris', favorisItem);//stock dans le localStorage favorisItem avec pour clé d'appelle "favoris"
-	// favorisItem = localStorage.getItem("favoris");// recupere favorisItem dans le localStorage via l'appelle de la clé
+	}
+	// let favorisItem = JSON.stringify(objetFavorieJSON); // transforme objFavorieJson en string json 
+	// localStorage.setItem('favoris', favorisItem);//stock favorisItem avec pour clé d'appelle "favoris"
+	// favorisItem = localStorage.getItem("favoris");// recupere favorisItem via l'appelle de la clé
 	// let favorisJSON = JSON.parse(favorisItem); // transforme la stringJSON favorisItem en objJSON
-
-
-
-	const addFavorite = () => { // fonction pour ajouter les favoris dans le localStorage au click du boutton
-		let favorisArray = []; //tableau ou tous les favoris sont stocker 
-		if (localStorage.getItem('favoris')) { // si localStorage contient une valeur favoris
-			favorisArray = JSON.parse(localStorage.getItem('favoris'))//stock le favoris dans le tableau
+	const addFavorite = () => { // fonction pour ajouter les favoris dans le localStorage si le click du bouton est true
+		if (localStorage.getItem('favoris')) {
+			favorisArray = JSON.parse(localStorage.getItem('favoris'))
+			// test if favorisArray contains a value if yes add the valus in favorisArray
 		}
-		// if (favorite.star === false){// si le bouton est false ajoute le dans le tableau sinon delete le favoris du localStorage
-		// 	// if (favorisArray.include(localStorage.setItem('favoris', JSON.stringify(favorisArray)))){
-		// 	// 		// le nouveau favoris est inclus dans le tableau alors ne fais rie
-		// 	// 		// ne fais rien du tous 
-		// 	// }else{
-		// 		localStorage.setItem('favoris', JSON.stringify(favorisArray))
-		// 		favorisArray.push(objetFavorieJSON);
-		// 	// }
-		// }else{
-		// 	localStorage.removeItem("favoris");
-		localStorage.setItem('favoris', JSON.stringify(favorisArray))
-		favorisArray.push(objetFavorieJSON);
+		if (favorite.star === false){
+			favorisArray.push(objetFavorieJSON);
+			localStorage.setItem('favoris', JSON.stringify(favorisArray))
+			// add favorite
+		} else {
+			let indexFavDelete = favorisArray.findIndex(fav => fav.reserveLink === objetFavorieJSON.reserveLink);
+			favorisArray.splice(indexFavDelete, 1)
+			localStorage.setItem('favoris', JSON.stringify(favorisArray))
+			//delete favorite
 		}
+	};
 
 
-
-
-		// favorisArray.push(objetFavorieJSON);
-		// localStorage.setItem('favoris', JSON.stringify(favorisArray))
-
-
-		// if (favorite.star === false ){
-		// 	let favorisItem = JSON.stringify(objetFavorieJSON);
-		// 	localStorage.setItem('favoris', favorisItem);
-		// 	tableauFav.push(favorisItem);
-
-
-
-		// 	// a remplire 
-		// } if (favorite.star === true){ // retire l'object du local storal si il y est deja stocker
-		//  // a remplire
-		// }
-	// };
 
 	return (
 		<div className="container separate">

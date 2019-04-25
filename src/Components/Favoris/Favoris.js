@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { Select, Button, Modal } from "react-materialize";
+import { Button, Modal } from "react-materialize";
+import Event from "../Event/Event";
 
 class Favori extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showFavori: false,
-      favArray : [],
+
     };
   }
 
@@ -30,19 +31,20 @@ class Favori extends Component {
           onClick={this.state.showFavori ? "Favori_list" : "add"}
         >
         </Button>
-        {/* <Modal header="Evenement en favoris " trigger={<Button>Trouver les events</Button>}>
-          {localStorage.getItem("favoris").map((event) => ( // for each event in api, display the title, image, adresse ... 
+        <Modal id="modal3" header="Evenements en favoris " >
+          {JSON.parse(localStorage.getItem("favoris")).map((event, index) => ( // for each event in api, display the title, image, adresse ... 
             <Event
-              title={event.performance[0] ? event.performance[0].displayName : ''} // call api and test if object is present and post else display a string empty
-              image={event.performance[0] ? event.performance[0].artist.id : ''}
-              address1={event.venue ? event.venue.displayName : ''}
-              address2={event.location ? event.location.city : ''}
-              date={event.start ? event.start.date : ''}
-              time={event.start ? event.start.time : ''}
-              reserveLink={event.performance[0] ? event.performance[0].artist.uri : ''}
+              key={index}
+              title={event.title ? event.title : ''} // call api and test if object is present and post else display a string empty
+              image={event.image ? event.image : ''}
+              address1={event.address1 ? event.address1 : ''}
+              address2={event.address2 ? event.address2 : ''}
+              date={event.date ? event.date : ''}
+              time={event.time ? event.time : ''}
+              reserveLink={event.reserveLink ? event.reserveLink: ''}
             />
           ))}
-        </Modal> */}
+        </Modal>
       </div>
     );
   }

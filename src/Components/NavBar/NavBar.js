@@ -7,7 +7,7 @@ import Filter from '../Filter/Filter';
 class NavBar extends Component {
   render() {
     return (
-      <Navbar brand={<a />} alignLinks="right" className="orange darken-2">
+      <Navbar alignLinks="right" className="orange darken-2">
         <NavItem>
           <Favoris />
         </NavItem>
