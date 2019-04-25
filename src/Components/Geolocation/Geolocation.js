@@ -18,39 +18,42 @@ class Geolocation extends Component{
   // componentDidMount s'effectue une seule fois au lancement du composant Geolocation 
   // (et pas quand on clique <button>)
   getLocation = () => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => { //return an object with latitude, longitude, & cie
-        this.setState({loading: true},() => {
-          fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&location=geo:${position.coords.latitude},${position.coords.longitude}`)
-          .then(data => data.json())
-          .then((data) => { 
-            this.setState({
-              songkick: data.resultsPage.results,
-              contentModal: <EventModal events={data.resultsPage.results.event} location={position} />,
+    this.setState({errorLog: null},() => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => { //return an object with latitude, longitude, & cie
+          this.setState({loading: true},() => {
+            fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&location=geo:${position.coords.latitude},${position.coords.longitude}`)
+            .then(data => data.json())
+            .then((data) => { 
+              this.setState({
+                songkick: data.resultsPage.results,
+                contentModal: <EventModal events={data.resultsPage.results.event} location={position} />,
+              })
+            })
+            .then( () => {
+              setTimeout(()=> this.setState({loading:false}), 3000);
             })
           })
-          .then( () => {
-            setTimeout(()=> this.setState({loading:false}), 3000);
-          })
-        })
-      }
-      ,
-      (error) => { //return an object with message and code (1=permission denied, 2=position unavailable, 3=timeout)
-        console.log(error);
-        if(error.code === 1) {
-          this.setState({ errorLog: "Permission refusée: vous pouvez supprimer le blocage dans les parametres de votre navigateur." }); 
-        } else if (error.code === 2) {
-          this.setState({ errorLog: "Geolocalisation non disponible. Vérifier si vous etes bien connectés à Internet" }); 
-        } else if (error.code === 3) {
-          this.setState({ errorLog: "la demande de geolocalisation a expiré" }); 
         }
-      }
-    );
+        ,
+        (error) => { //return an object with message and code (1=permission denied, 2=position unavailable, 3=timeout)
+          if(error.code === 1) {
+            this.setState({ errorLog: "Permission refusée: vous pouvez supprimer le blocage dans les parametres de votre navigateur." }); 
+          } else if (error.code === 2) {
+            this.setState({ errorLog: "Geolocalisation non disponible. Vérifier si vous etes bien connectés à Internet" }); 
+          } else if (error.code === 3) {
+            this.setState({ errorLog: "la demande de geolocalisation a expiré" }); 
+          }
+        }
+      );
+    })
   }
 
   render(){
     return (
       <div className="geoloc-display">
+        {/* display error message if problem with geoloc:  */}
+        <p className="error-log"> {this.state.errorLog ? this.state.errorLog : "" } </p> 
         <figure>
           <p className="why-geoloc">Pour te donner les événements autour de toi, nous avons besoin de te géolocaliser.</p>
           <button 
