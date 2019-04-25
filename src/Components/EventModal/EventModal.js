@@ -11,7 +11,6 @@ class EventModal extends Component {
     return (
       <Modal header="Evenement à proximité " trigger={<Button>Trouver les events</Button>}>
         {resultEventsApi.map((event) => (
-          
           <Event
             title={event.performance[0] ? event.performance[0].displayName : ''}
             image={event.performance[0] ? event.performance[0].artist.id : ''}
