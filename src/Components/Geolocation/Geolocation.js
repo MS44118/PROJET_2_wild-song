@@ -39,11 +39,11 @@ class Geolocation extends Component{
         (error) => { //return an object with message and code (1=permission denied, 2=position unavailable, 3=timeout)
           console.log(error);
           if(error.code === 1) {
-            this.setState({ errorLog: "Permission refusée: vous pouvez supprimer le blocage dans les parametres de votre navigateur." }); 
+            this.setState({ errorLog: "Permission refusée: vous pouvez supprimer le blocage dans les paramètres de votre navigateur." }); 
           } else if (error.code === 2) {
-            this.setState({ errorLog: "Geolocalisation non disponible. Vérifier si vous etes bien connectés à Internet" }); 
+            this.setState({ errorLog: "Géolocalisation non disponible. Vérifiez si vous êtes bien connectés à Internet" }); 
           } else if (error.code === 3) {
-            this.setState({ errorLog: "la demande de geolocalisation a expiré" }); 
+            this.setState({ errorLog: "la demande de géolocalisation a expiré" }); 
           }
         }
       );
@@ -58,7 +58,7 @@ class Geolocation extends Component{
           <button 
             className={`waves-effect waves-light btn-large ${this.state.contentModal ? 'none' : ''}`} 
             onClick={this.getLocation}
-          > Geolocalisez-moi 
+          > Géolocalisez-moi 
           </button>
           {/* display the button to open the Modal AFTER API fetch:  */}
           {this.state.contentModal}

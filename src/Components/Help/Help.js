@@ -52,12 +52,12 @@ class Help extends Component {
             <Switch offLabel="off" onLabel="On" onChange={this.state.pressed}/>
           </div>
           <div>
-          <p className="help-title">version</p>
-            <version>V.0.02</version>
+          <p className="help-title">Version</p>
+            <version>V.0.2</version>
           </div>
           
           <div>
-            <p className="help-title">contributrices/eurs</p>
+            <p className="help-title">Contributrices/eurs</p>
             <div class="row">
               
             <div class="col s12 m4">
