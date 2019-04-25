@@ -11,6 +11,7 @@
 /*Media for smartphones*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 600px) {
   .App-logo {
+    margin-top: 2rem;
     width: 20rem;
     height: 10rem;  
   }
@@ -19,7 +20,8 @@
 @media only screen and (min-device-width : 600px) and (max-device-width : 992px) {
   .App-logo {
     width: 40rem;
-    height: 20rem;  
+    height: 20rem; 
+    margin-top: 3rem; 
     }    
   }
 
@@ -28,6 +30,7 @@
   .App-logo {
     width: 45rem;
     height: 22rem;
+    margin-top: 4rem;
     margin-bottom: 40px;
     }    
   }
