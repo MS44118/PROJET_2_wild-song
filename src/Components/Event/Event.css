@@ -3,15 +3,15 @@
 }
 
 .marge {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
-.less {
-  height: 7rem;
-  overflow: hidden;
+.sizePic {
+  width: 100%;
+  height: 100%;
+  border: 1px solid grey;
 }
 
-img .imgEvent{
-  width: 7em;
-  height: 7em;
+.colorButton {
+  background-color: var(--button-bg-color)!important;
 }
