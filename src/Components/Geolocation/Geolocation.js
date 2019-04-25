@@ -17,7 +17,7 @@ class Geolocation extends Component{
 
   // componentDidMount s'effectue une seule fois au lancement du composant Geolocation 
   // (et pas quand on clique <button>)
-  getLocation = () => { 
+  getLocation = () => {
     navigator.geolocation.getCurrentPosition(
       (position) => { //return an object with latitude, longitude, & cie
         this.setState({loading: true},() => {
@@ -30,7 +30,7 @@ class Geolocation extends Component{
             })
           })
           .then( () => {
-            setTimeout(()=> this.setState({loading:false}), 3000)
+            setTimeout(()=> this.setState({loading:false}), 3000);
           })
         })
       }
@@ -54,17 +54,18 @@ class Geolocation extends Component{
         {/* display error message if problem with geoloc:  */}
         <p className="error-log"> {this.state.errorLog ? this.state.errorLog : "" } </p> 
         <figure>
-          <p>Pour te donner les événements autour de toi, nous avons besoin de te géolocaliser.</p>
+          <p className="why-geoloc">Pour te donner les événements autour de toi, nous avons besoin de te géolocaliser.</p>
           <button 
             className={`waves-effect waves-light btn-large ${this.state.contentModal ? 'none' : ''}`} 
             onClick={this.getLocation}
           > Geolocalisez-moi 
           </button>
+          {/* display the button to open the Modal AFTER API fetch:  */}
           {this.state.contentModal}
           {/* display city of the first event AFTER API fetch:  */}
           <p> {this.state.songkick ? this.state.songkick.event[0].location.city : "" } </p> 
           {/* display loading animation WHILE fetching API:  */}
-          <p>{this.state.loading ? <Loading /> : ""} </p>
+          <p className="loading-animation">{this.state.loading ? <Loading /> : ""} </p>
         </figure>
       </div>
     );
