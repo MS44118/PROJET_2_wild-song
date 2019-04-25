@@ -9,7 +9,7 @@ import './NavBar.css';
 class NavBar extends Component {
   render() {
     return (
-      <Navbar brand={<a />} alignLinks="right">
+      <Navbar  alignLinks="right">
         <NavItem>
           <Favoris />
         </NavItem>
@@ -17,7 +17,7 @@ class NavBar extends Component {
           <Filter />
         </NavItem>
         <NavItem>
-          <Search />
+          <Search  />
         </NavItem>
         <NavItem >
           <Help />
