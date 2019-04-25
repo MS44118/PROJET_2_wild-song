@@ -18,7 +18,7 @@ class Geolocation extends Component{
   // componentDidMount s'effectue une seule fois au lancement du composant Geolocation 
   // (et pas quand on clique <button>)
   getLocation = () => {
-    this.setState({errorLog: null},() => {
+    // this.setState({errorLog: null},() => {
       navigator.geolocation.getCurrentPosition(
         (position) => { //return an object with latitude, longitude, & cie
           this.setState({loading: true},() => {
@@ -37,6 +37,7 @@ class Geolocation extends Component{
         }
         ,
         (error) => { //return an object with message and code (1=permission denied, 2=position unavailable, 3=timeout)
+          console.log(error);
           if(error.code === 1) {
             this.setState({ errorLog: "Permission refusée: vous pouvez supprimer le blocage dans les parametres de votre navigateur." }); 
           } else if (error.code === 2) {
@@ -46,14 +47,12 @@ class Geolocation extends Component{
           }
         }
       );
-    })
+    // })
   }
 
   render(){
     return (
       <div className="geoloc-display">
-        {/* display error message if problem with geoloc:  */}
-        <p className="error-log"> {this.state.errorLog ? this.state.errorLog : "" } </p> 
         <figure>
           <p className="why-geoloc">Pour te donner les événements autour de toi, nous avons besoin de te géolocaliser.</p>
           <button 
@@ -66,6 +65,8 @@ class Geolocation extends Component{
           {/* display loading animation WHILE fetching API:  */}
           <p className="loading-animation">{this.state.loading ? <Loading /> : ""} </p>
         </figure>
+        {/* display error message if problem with geoloc:  */}
+        <p className="error-log"> {this.state.errorLog ? this.state.errorLog : "" } </p> 
       </div>
     );
   }

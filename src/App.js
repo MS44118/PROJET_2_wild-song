@@ -5,7 +5,8 @@ import NavBar from './Components/NavBar/NavBar.js';
 import Geolocation from './Components/Geolocation/Geolocation';
 // eslint-disable-next-line
 import M from '../node_modules/materialize-css/dist/js/materialize.js';
-import logo from './Images/LivinSoundTransp.png';
+// import logo from './Images/LivinSoundTransp.png';
+import logo from './Images/logo.png';
 
 class App extends Component {
   render() {

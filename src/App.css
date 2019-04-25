@@ -12,14 +12,14 @@
 @media only screen and (min-device-width : 320px) and (max-device-width : 600px) {
   .App-logo {
     width: 20rem;
-    height: 20rem;  
+    height: 10rem;  
   }
 }
 /*Media for tablet*/
 @media only screen and (min-device-width : 600px) and (max-device-width : 992px) {
   .App-logo {
     width: 40rem;
-    height: 40rem;  
+    height: 20rem;  
     }    
   }
 
@@ -27,7 +27,8 @@
 @media only screen and (min-device-width : 993px) {
   .App-logo {
     width: 45rem;
-    height: 45rem;
+    height: 22rem;
+    margin-bottom: 40px;
     }    
   }
 
