@@ -1,4 +1,16 @@
- /* #modalSize {
-  width: 25px!important;
-  height: 25px;
-} */
+ @media only screen and (min-device-width : 993px) {
+  .modalSize {
+    width: 50%!important;
+  }
+}
+
+@media only screen and (min-device-width : 1400px) {
+  .modalSize {
+    width: 40%!important;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}

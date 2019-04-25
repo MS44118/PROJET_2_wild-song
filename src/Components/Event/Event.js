@@ -19,7 +19,7 @@ const Event = (props) => {
 	
 	//structure of the event
 	return (
-		<div className="container separate">
+		<div className="container-fluid separate">
 			<div className="row">
 				<div className="col s12 m9 mt-2">
 					<h5>{props.title}</h5>
