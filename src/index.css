@@ -12,3 +12,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/*Scrollbar for Chrome */
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+background-color: var(--third-bg-color);
+outline: 1px solid var(--button-bg-color);
+}
+
+div::-webkit-scrollbar {
+  width: 1em;
+}
+
+div::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+div::-webkit-scrollbar-thumb {
+background-color: var(--third-bg-color);
+outline: 1px solid var(--button-bg-color);
+}
+
+/*Scrollbar for Firefox*/
+body::-moz-scrollbar-width {
+  width: 1em;
+}
+
+body::-moz-scrollbar-track-color {
+  background-color: var(--third-bg-color) !important;
+  outline: 1px solid var(--button-bg-color) !important;
+}
+
+div::-moz-scrollbar-track-color {
+  background-color: var(--third-bg-color) !important;
+  outline: 1px solid var(--button-bg-color) !important;
+}
