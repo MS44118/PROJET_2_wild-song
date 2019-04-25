@@ -6,6 +6,7 @@ class Favori extends Component {
     super(props);
     this.state = {
       showFavori: false,
+      favArray : [],
     };
   }
 
@@ -29,22 +30,19 @@ class Favori extends Component {
           onClick={this.state.showFavori ? "Favori_list" : "add"}
         >
         </Button>
-        <Modal id="modal3" header="Bienvenue dans la recherche">
-          <Select onChange={this.onChange}>
-            <option value="" disabled selected>
-              Choose your option
-            </option>
-            <option value="1">
-              Ville
-            </option>
-            <option value="2">
-              Artiste
-            </option>
-            <option value="3">
-              Salle de concert
-            </option>
-          </Select>
-        </Modal>
+        {/* <Modal header="Evenement en favoris " trigger={<Button>Trouver les events</Button>}>
+          {localStorage.getItem("favoris").map((event) => ( // for each event in api, display the title, image, adresse ... 
+            <Event
+              title={event.performance[0] ? event.performance[0].displayName : ''} // call api and test if object is present and post else display a string empty
+              image={event.performance[0] ? event.performance[0].artist.id : ''}
+              address1={event.venue ? event.venue.displayName : ''}
+              address2={event.location ? event.location.city : ''}
+              date={event.start ? event.start.date : ''}
+              time={event.start ? event.start.time : ''}
+              reserveLink={event.performance[0] ? event.performance[0].artist.uri : ''}
+            />
+          ))}
+        </Modal> */}
       </div>
     );
   }
