@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import EventModal from '../EventModal/EventModal';
 import './Geolocation.css';
 import config from '../../config';
-import Loading from "../Loading/Loading";
 
 class Geolocation extends Component{
   constructor(){
@@ -11,26 +10,20 @@ class Geolocation extends Component{
       songkick: null,
       contentModal: null,
       errorLog: null,
-      loading: false,
     };
   }
 
-  // componentDidMount s'effectue une seule fois au lancement du composant Geolocation 
-  // (et pas quand on clique <button>)
+  // componentDidMount s'effectue une seule fois au lancement du composant Geolocation (et pas qd click button)
   getLocation = () => { 
     navigator.geolocation.getCurrentPosition(
       (position) => { //return an object with latitude, longitude, & cie
-        this.setState({loading: true},() => {
-          fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&location=geo:${position.coords.latitude},${position.coords.longitude}`)
-          .then(data => data.json())
-          .then((data) => { 
-            this.setState({
-              songkick: data.resultsPage.results,
-              contentModal: <EventModal events={data.resultsPage.results.event} />,
-            })
-          })
-          .then( () => {
-            setTimeout(()=> this.setState({loading:false}), 3000)
+        // IMPLEMENT THERE THE LOADING ANIMATION ------------------------
+        fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&location=geo:${position.coords.latitude},${position.coords.longitude}`)
+        .then(data => data.json())
+        .then((data) => { 
+          this.setState({
+            songkick: data.resultsPage.results,
+            contentModal: <EventModal events={data.resultsPage.results.event} location={position}/>,
           })
         })
       }
@@ -51,20 +44,12 @@ class Geolocation extends Component{
   render(){
     return (
       <div className="geoloc-display">
-        {/* display error message if problem with geoloc:  */}
-        <p className="error-log"> {this.state.errorLog ? this.state.errorLog : "" } </p> 
         <figure>
-          <p>Pour te donner les événements autour de toi, nous avons besoin de te géolocaliser.</p>
-          <button 
-            className={`waves-effect waves-light btn-large ${this.state.contentModal ? 'none' : ''}`} 
-            onClick={this.getLocation}
-          > Geolocalisez-moi 
-          </button>
+          <p>Pour te donner les événements qui vont se dérouler autour de toi, nous avons besoin de te géolocaliser.</p>
+          <button className={`waves-effect waves-light btn-large ${this.state.contentModal ? 'none' : ''}`} onClick={this.getLocation}> Geolocalisez-moi </button>
           {this.state.contentModal}
-          {/* display city of the first event AFTER API fetch:  */}
-          <p> {this.state.songkick ? this.state.songkick.event[0].location.city : "" } </p> 
-          {/* display loading animation WHILE fetching API:  */}
-          <p>{this.state.loading ? <Loading /> : ""} </p>
+          <p>nous allons te donner les evenements pour: </p>
+          <p>{this.state.songkick ? this.state.songkick.event[0].location.city : this.state.errorLog} </p>
         </figure>
       </div>
     );
@@ -72,3 +57,4 @@ class Geolocation extends Component{
 }
 
 export default Geolocation;
+
