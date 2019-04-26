@@ -8,7 +8,7 @@ class Favori extends Component {
       showFavori: false,
     };
   }
-
+//méthode pour activer la modale
   showFavoriMenu = () => {
     this.setState({
       showFavori: !this.state.showFavori
