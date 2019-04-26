@@ -38,19 +38,22 @@
 /*CSS basic from React*/
 .App {
   text-align: center;
+  /* min-height: 100%; */
 }
 
 
 /* ---------------------- INSERT NIGHT MODE PARAMETERS HERE  ---------------------- */
-/* 
 
+/* 
 .App {
-  background: grey;
+  background: #082b44;
+  color:white;
 }
 
 .container {
-  background: grey;
+  background: #082b44;
+  color:white;
 }
 
 
-*/
+ */

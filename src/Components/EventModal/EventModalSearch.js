@@ -4,7 +4,7 @@ import Event from "../Event/Event";
 import './EventModal.css'
 
 // This component call the component Event for display as many times as there is a geolocate event
-class EventModal extends Component {
+class EventModalSearch extends Component {
   constructor(){
     super();
     this.state = {
@@ -30,10 +30,10 @@ class EventModal extends Component {
           event.performance[0] ? event.performance[0].displayName : ''
         )).map((event) => (
           <Event
-            lat={this.props.location.coords.latitude}
-            lng={this.props.location.coords.longitude}
-            // eventLat={event.venue.lat ? event.venue.lat : ''}
-            // eventLng={event.venue.lng ? event.venue.lng : ''}
+            // lat={this.props.location.coords.latitude}
+            // lng={this.props.location.coords.longitude}
+            eventLat={event.venue.lat ? event.venue.lat : ''}
+            eventLng={event.venue.lng ? event.venue.lng : ''}
             title={event.performance[0] ? event.performance[0].displayName : ''}
             image={event.performance[0] ? event.performance[0].artist.id : ''}
             address1={event.venue ? event.venue.displayName : ''}
@@ -48,4 +48,4 @@ class EventModal extends Component {
   }
 }
 
-export default EventModal;
+export default EventModalSearch;
