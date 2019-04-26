@@ -10,7 +10,7 @@ import logo from '../../Images/LivinSoundTransp.png';
 class NavBar extends Component {
   render() {
     return (
-      <Navbar  alignLinks="right">
+      <Navbar  alignLinks="right" className="orange darken-2">
         <NavItem>
           <img className="logo" src={logo} alt="Logo livinsound" />
         </NavItem>
