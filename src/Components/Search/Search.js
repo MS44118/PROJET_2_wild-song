@@ -15,46 +15,39 @@ class Search extends Component  {
        userInput:""
       }
     }
-    //méthode afin que l'utilisateur puisse renseigner la recherche et useriput s'update à chaqque frappe de touche
+    //méthode afin que l'utilisateur puisse renseigner la recherche et userinput s'update à chaqque frappe de touche
     onChange(event) {
       this.setState({
         userInput: event.target.value
-      });
+      }, () => console.log(this.state.userInput) );
     }
+
     // évite de reloader la page et contrôle la casse du texte
     addEvent(event) {
       event.preventDefault();
     }
+    
+    
     //méthode de récupération fetch pour les concerts de l'API songkick, les concerts sont triés par nom d'artise, date, ville
     componentDidMount() {
     
-      // fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&artist_name=${artist_name}`)
-      this.setState ({
-
-      }) 
-      // .then(result =>result.json())
-      // .then(result => {
-        // this.setState({
-        //   event: resultsPage.results.event,
-        //   artist: resultsPage.results.event.performance.artist,
-        //   location: resultsPage.results.event.location
-        // });
-    //  })    
-    }
-
-
-  getSearchConcert = () => {
-    
+      fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&artist_name=${this.state.userInput}`)
+      .then(result =>result.json())
+      .then(result => {
+        this.setState({
+           event: result,
+     })    
+    });
   }
+
+  
   
  
     render() {
-      let resultEventsApi = this.props.events;
+       console.log(this.state.event)
       return (
         <div>
-        {this.state.event}
-        {this.state.artist}
-        {this.state.location} 
+ 
           <Button
             icon="search"
             flat waves="light" //to hide the button raising
@@ -76,12 +69,6 @@ class Search extends Component  {
               />
               <button onClick={this.addEvent.bind(this)}>Ajouter</button>
             </form>
-            {/* <p>Prochainement, vous trouverez ici la fonctionnalité RECHERCHE.</p>
-            <p>par ville</p>
-            <p>par artiste</p>
-            <p>par date</p>
-            <p>par prix</p>
-            <p>par type (exemple: filtre ENFANTS) </p> */}
           </Modal>
         </div>
       ); 
