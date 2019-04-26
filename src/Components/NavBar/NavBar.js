@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Navbar, NavItem } from "react-materialize";
 import Favoris from '../Favoris/Favoris';
 import Help from '../Help/Help';
-import Filter from '../Filter/Filter';
+// import Filter from '../Filter/Filter';
 import Search from '../Search/Search';
 import './NavBar.css';
 import logo from '../../Images/LivinSoundTransp.png';
@@ -17,9 +17,9 @@ class NavBar extends Component {
         <NavItem>
           <Favoris />
         </NavItem>
-        <NavItem>
+        {/* <NavItem>
           <Filter />
-        </NavItem>
+        </NavItem> */}
         <NavItem>
           <Search  />
         </NavItem>

@@ -44,13 +44,13 @@ class Help extends Component {
         <Modal id="modal1" header="Bienvenue dans l'aide">
           <p>Vous trouverez ici les informations d'aide pour utiliser de manière optimale l'application.</p>
 
-          <div>
+          {/* <div>
             <p className="help-title">options</p>
             <p>Mode nuit</p>
             <Switch offLabel="off" onLabel="On" onChange={this.state.pressed} />
             <p>Mode Gaucher</p>
             <Switch offLabel="off" onLabel="On" onChange={this.state.pressed} />
-          </div>
+          </div> */}
           <div>
             <p className="help-title">Version</p>
             <version>V.0.2</version>
