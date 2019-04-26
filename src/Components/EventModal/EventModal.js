@@ -35,8 +35,8 @@ class EventModal extends Component {
             key={index}// call api and test if object is present and post else display a string empty
             lat={this.props.location.coords.latitude}
             lng={this.props.location.coords.longitude}
-            // eventLat={event.venue.lat ? event.venue.lat : ''}
-            // eventLng={event.venue.lng ? event.venue.lng : ''}
+            eventLat={event.venue.lat ? event.venue.lat : ''}
+            eventLng={event.venue.lng ? event.venue.lng : ''}
             title={event.performance[0] ? event.performance[0].displayName : ''}
             image={event.performance[0] ? event.performance[0].artist.id : ''}
             address1={event.venue ? event.venue.displayName : ''}
