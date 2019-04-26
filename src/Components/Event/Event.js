@@ -5,7 +5,7 @@ import { Icon, Button,} from 'react-materialize';
 const Event = (props) => {
 
 	const [otherClass, setOtherClass] = useState({key: true});
-	const [favorite, setFavorite] = useState({star: false});
+	const [favorite, setFavorite] = useState({star: props.star ? props.star : false});
 
 	let favorisArray =[]
 	let objetFavorieJSON = { // creation de l'objet json pour stocker l'event
@@ -16,6 +16,7 @@ const Event = (props) => {
 		date: props.date,
 		time: props.time,
 		reserveLink: props.reserveLink,
+		star: favorite,
 	}
 	// let favorisItem = JSON.stringify(objetFavorieJSON); // transforme objFavorieJson en string json 
 	// localStorage.setItem('favoris', favorisItem);//stock favorisItem avec pour clé d'appelle "favoris"
