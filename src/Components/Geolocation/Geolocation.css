@@ -2,13 +2,13 @@ button {
   background-color: var(--button-bg-color) !important;
 }
 
-.geoloc-display{
+.geoloc-display {
   width: 95%;
-  max-width:  600px;
+  max-width: 600px;
   margin: auto;
 }
 
-figure{
+figure {
   border: solid 1px;
 }
 

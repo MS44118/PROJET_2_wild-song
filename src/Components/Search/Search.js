@@ -23,7 +23,7 @@ const Search = () => {
         <p>par type (exemple: filtre ENFANTS) </p>
       </Modal>
     </div>
-  ); 
+  );
 }
-  
+
 export default Search;

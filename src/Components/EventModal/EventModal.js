@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Modal,Button  } from "react-materialize";
+import { Modal, Button } from "react-materialize";
 import Event from "../Event/Event";
 import './EventModal.css'
 
 // This component call the component Event for display as many times as there is a geolocate event
 class EventModal extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       getCity: null,
@@ -13,13 +13,13 @@ class EventModal extends Component {
   }
   componentDidMount = () => {
     fetch(`https://geo.api.gouv.fr/communes?lat=${this.props.location.coords.latitude}&lon=${this.props.location.coords.longitude}&fields=nom&format=json&geometry=centre`)
-    .then(res => res.json())
-    .then((res) => {
-      this.setState({
-        getCity: res,
+      .then(res => res.json())
+      .then((res) => {
+        this.setState({
+          getCity: res,
+        })
+        console.log(res)
       })
-      console.log(res)
-    })
   }
   render() {
     let resultEventsApi = this.props.events;
