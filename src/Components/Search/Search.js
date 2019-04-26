@@ -7,11 +7,11 @@ class Search extends Component {
   constructor() {
     super();
     this.state = {
-      event: null,
-      artist: null,
-      location: null,
-      performance: null,
-      result: null,
+      // event: null,
+      // artist: null,
+      // location: null,
+      // performance: null,
+      // result: null,
       userInput: "",
       contentModal: null
     }
@@ -73,9 +73,15 @@ class Search extends Component {
               placeholder="Renseignez votre recherche"
               onChange={this.handleInput}
             />
-            <button onClick={this.searchArtist}>Trouver Artiste: {this.state.userInput}</button>
+            <button             
+              className={`waves-effect waves-light btn-large ${this.state.contentModal ? 'none' : ''}`} 
+              onClick={this.searchArtist} 
+            >
+              Trouver Artiste: {this.state.userInput}
+            </button>
           </form>
         </Modal>
+
         {this.state.contentModal}
 
       </div>
