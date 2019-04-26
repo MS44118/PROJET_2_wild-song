@@ -15,7 +15,7 @@ class Search extends Component  {
        userInput:""
       }
     }
-    //méthode afin que l'utilisateur puisse renseigner la recherche et userinput s'update à chaqque frappe de touche
+    //méthode afin que l'utilisateur puisse renseigner la recherche et userinput s'update à chaque frappe de touche
     onChange(event) {
       this.setState({
         userInput: event.target.value
@@ -31,7 +31,7 @@ class Search extends Component  {
     //méthode de récupération fetch pour les concerts de l'API songkick, les concerts sont triés par nom d'artise, date, ville
     componentDidMount() {
     
-      fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&artist_name=${this.state.userInput}`)
+      fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&event=${this.state.userInput}`)
       .then(result =>result.json())
       .then(result => {
         this.setState({
