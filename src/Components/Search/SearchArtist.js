@@ -4,7 +4,7 @@ import config from '../../config';
 import EventModal from '../EventModal/EventModal';
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       value: "", //    https://youtu.be/EWu9lWEpNRA
@@ -12,10 +12,10 @@ class App extends Component {
   }
 
   handleUrl = (event) => {
-    this.setState({ value: event.target.value})
+    this.setState({ value: event.target.value })
   }
 
-  render () {
+  render() {
     return (
       <div className="App-header">
         <div>
@@ -23,7 +23,7 @@ class App extends Component {
         </div>
         <div>
           <button onClick={this.togglePlayer}>
-            { this.state.play? "Stop" : "Start"}
+            {this.state.play ? "Stop" : "Start"}
           </button>
           <button onClick={this.downVolume}>-</button>
           <button onClick={this.upVolume}>+</button>
@@ -32,7 +32,6 @@ class App extends Component {
       </div>
     )
   }
-
 }
 
 export default App;

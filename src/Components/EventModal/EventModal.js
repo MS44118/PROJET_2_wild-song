@@ -22,6 +22,7 @@ class EventModal extends Component {
         console.log(res)
       })
   }
+
   render() {
     let resultEventsApi = this.props.events;
     return (
@@ -29,7 +30,7 @@ class EventModal extends Component {
         <h2>Evenement a proximite de {this.state.getCity ? this.state.getCity[0].nom : ''}</h2>
         {resultEventsApi.filter((event) => (
           event.performance[0] ? event.performance[0].displayName : ''
-        )).map((event,index) => (// for each event in api, display the title, image, adresse ... 
+        )).map((event, index) => (// for each event in api, display the title, image, adresse ... 
           <Event
             key={index}// call api and test if object is present and post else display a string empty
             lat={this.props.location.coords.latitude}
@@ -43,9 +44,7 @@ class EventModal extends Component {
             date={event.start ? event.start.date : ''}
             time={event.start ? event.start.time : ''}
             reserveLink={event.performance[0] ? event.performance[0].artist.uri : ''}
-            
-            
-            // star={favorisArr.findIndex(star => star.event.performance[0].artist.uri=== favorisArr.reserveLink) ? true : false}
+          // star={favorisArr.findIndex(star => star.event.performance[0].artist.uri=== favorisArr.reserveLink) ? true : false}
           />
         ))}
       </Modal>

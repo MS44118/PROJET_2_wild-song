@@ -27,6 +27,7 @@ class Help extends Component {
       pressed: !this.setState.pressed
     });
   }
+
   render() {
     return (
       <div>
@@ -59,7 +60,6 @@ class Help extends Component {
           <div>
             <p className="help-title">Contributrices/eurs</p>
             <div class="row">
-
               <div class="col s12 m4">
                 <div class="card">
                   <div class="card-image">
@@ -75,7 +75,6 @@ class Help extends Component {
                   </div>
                 </div>
               </div>
-
               <div class="col s12 m4">
                 <div class="card">
                   <div class="card-image">
@@ -91,7 +90,6 @@ class Help extends Component {
                   </div>
                 </div>
               </div>
-
               <div class="col s12 m4">
                 <div class="card">
                   <div class="card-image">
@@ -107,7 +105,6 @@ class Help extends Component {
                   </div>
                 </div>
               </div>
-
               <div class="col s12 m4">
                 <div class="card">
                   <div class="card-image">
@@ -123,7 +120,6 @@ class Help extends Component {
                   </div>
                 </div>
               </div>
-
               <div class="col s12 m4">
                 <div class="card">
                   <div class="card-image">
@@ -139,10 +135,8 @@ class Help extends Component {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
-
         </Modal>
       </div>
     );

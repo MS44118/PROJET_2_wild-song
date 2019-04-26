@@ -10,7 +10,8 @@ class Favori extends Component {
 
     };
   }
-//méthode pour activer la modale
+
+  //méthode pour activer la modale
   showFavoriMenu = () => {
     this.setState({
       showFavori: !this.state.showFavori
@@ -41,7 +42,7 @@ class Favori extends Component {
               address2={event.address2 ? event.address2 : ''}
               date={event.date ? event.date : ''}
               time={event.time ? event.time : ''}
-              reserveLink={event.reserveLink ? event.reserveLink: ''}
+              reserveLink={event.reserveLink ? event.reserveLink : ''}
               star={event.star}
               lat={event.lat ? event.lat : ''}
               lng={event.lng ? event.lng : ''}

@@ -18,7 +18,7 @@ class Search extends Component {
   }
 
   //méthode afin que l'utilisateur puisse renseigner la recherche et userinput s'update à chaque frappe de touche
-  handleInput= (event) => {
+  handleInput = (event) => {
     this.setState({ userInput: event.target.value })
   }
 
@@ -32,13 +32,13 @@ class Search extends Component {
     navigator.geolocation.getCurrentPosition(
       (position) => { //return an object with latitude, longitude, & cie
         fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&artist_name=${this.state.userInput}`)
-        .then(data => data.json())
-        .then(data => {
-          this.setState({
-            contentModal: <EventModal events={data.resultsPage.results.event} location={position}  />,
+          .then(data => data.json())
+          .then(data => {
+            this.setState({
+              contentModal: <EventModal events={data.resultsPage.results.event} location={position} />,
+            });
+            console.log(data);
           });
-          console.log(data);
-        });
       },
       (error) => { //return an object with message and code (1=permission denied, 2=position unavailable, 3=timeout)
         console.log(error);
@@ -62,8 +62,8 @@ class Search extends Component {
         </Button>
 
         {/* modal to enter text to search */}
-        <Modal 
-          id="modal-search" 
+        <Modal
+          id="modal-search"
           header="Moteur de Recherche"
         >
           <form>
@@ -73,24 +73,18 @@ class Search extends Component {
               placeholder="Renseignez votre recherche"
               onChange={this.handleInput}
             />
-            <button             
+            <button
               // className={`waves-effect waves-light btn-large ${this.state.contentModal ? 'none' : ''}`} 
-              onClick={this.searchArtist} 
+              onClick={this.searchArtist}
             >
               Trouver Artiste: {this.state.userInput}
             </button>
           </form>
         </Modal>
-
         {this.state.contentModal}
-
       </div>
     );
   }
-
 }
-
-
-
 
 export default Search;

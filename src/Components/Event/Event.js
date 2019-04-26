@@ -17,7 +17,6 @@ const Event = (props) => {
 		return financial(Math.sqrt(sqr(y2 - y1) + sqr(x2 - x1)))
 	}
 
-
 	let favorisArray =[]
 	let objetFavorieJSON = { // creation de l'objet json pour stocker l'event
 		title: props.title,
@@ -53,8 +52,6 @@ const Event = (props) => {
 			//delete favorite
 		}
 	};
-
-
 
 	//structure of the event
 	return (
