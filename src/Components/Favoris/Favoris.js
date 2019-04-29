@@ -29,7 +29,7 @@ class Favori extends Component {
           onClick={this.state.showFavori ? "Favori_list" : "add"}
         >
         </Button>
-        <Modal id="modal3" header="Evenements en favoris " >
+        <Modal id="modal3" header="Evènements en favoris " >
           {JSON.parse(localStorage.getItem("favoris")) ? JSON.parse(localStorage.getItem("favoris")).map((event, index) => ( // for each event in api, display the title, image, adresse ... 
             <Event
               key={index}
@@ -47,7 +47,7 @@ class Favori extends Component {
               eventLng={event.eventLng ? event.eventLng : ''}
               id={event.id}
             />
-          )) : "Favoris Vide"}
+          )) : "Favoris vide"}
         </Modal>
       </div>
     );
