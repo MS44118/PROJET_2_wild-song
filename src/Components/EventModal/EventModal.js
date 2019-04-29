@@ -8,7 +8,7 @@ class EventModal extends Component {
   constructor() {
     super();
     this.state = {
-      getCity: null,
+      getCity: null
     };
   }
   //fetch for get the city's location of the user
@@ -16,10 +16,7 @@ class EventModal extends Component {
     fetch(`https://geo.api.gouv.fr/communes?lat=${this.props.location.coords.latitude}&lon=${this.props.location.coords.longitude}&fields=nom&format=json&geometry=centre`)
       .then(res => res.json())
       .then((res) => {
-        this.setState({
-          getCity: res,
-        })
-        console.log(res)
+        this.setState({ getCity: res });
       })
   }
 

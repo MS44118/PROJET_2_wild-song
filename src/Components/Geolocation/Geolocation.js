@@ -11,7 +11,7 @@ class Geolocation extends Component {
       songkick: null,
       contentModal: null,
       errorLog: null,
-      loading: false,
+      loading: false
     };
   }
 
@@ -27,8 +27,8 @@ class Geolocation extends Component {
             .then((data) => {
               this.setState({
                 songkick: data.resultsPage.results,
-                contentModal: <EventModal events={data.resultsPage.results.event} location={position} />,
-              })
+                contentModal: <EventModal events={data.resultsPage.results.event} location={position} />
+              });
             })
             .then(() => {
               setTimeout(() => this.setState({ loading: false }), 3000);
@@ -37,7 +37,6 @@ class Geolocation extends Component {
       }
       ,
       (error) => { //return an object with message and code (1=permission denied, 2=position unavailable, 3=timeout)
-        console.log(error);
         if (error.code === 1) {
           this.setState({ errorLog: "Permission refusée: vous pouvez supprimer le blocage dans les paramètres de votre navigateur." });
         } else if (error.code === 2) {

@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import { Modal, Button } from "react-materialize";
 import config from '../../config';
-import EventModal from '../EventModal/EventModal';
+// import EventModal from '../EventModal/EventModal';
 
-class Search extends Component {
+class SearchEvent extends Component {
   constructor() {
     super();
     this.state = {
       // event: null,
-      // artist: null,
-      // location: null,
-      // performance: null,
-      // result: null,
+      result: null,
       userInput: "",
       contentModal: null
     }
@@ -19,31 +16,24 @@ class Search extends Component {
 
   //méthode afin que l'utilisateur puisse renseigner la recherche et userinput s'update à chaque frappe de touche
   handleInput = (event) => {
-    this.setState({ userInput: event.target.value });
+    this.setState({ userInput: event.target.value })
   }
 
-  // évite de reloader la page et contrôle la casse du texte
-  // addEvent(event) {
+  // addEvent = (event) => {
   //   event.preventDefault();
   // }
 
   //méthode de récupération fetch pour les concerts de l'API songkick, les concerts sont triés par nom d'artise, date, ville
   searchArtist = () => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => { //return an object with latitude, longitude, & cie
-        fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&artist_name=${this.state.userInput}`)
-          .then(data => data.json())
-          .then((data) => {
-            this.setState({
-              contentModal: <EventModal events={data.resultsPage.results.event} location={position} />,
-            });
-            console.log(data);
-          });
-      },
-      (error) => { //return an object with message and code (1=permission denied, 2=position unavailable, 3=timeout)
-        console.log(error);
-      }
-    )
+    fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&artist_name=${this.state.userInput}`)
+      .then(data => data.json())
+      .then((data) => {
+        this.setState({
+          result: data.resultsPage.results,
+          // contentModal: <EventModal events={data.resultsPage.results.event} location={position} />,
+        })
+        console.log(data);
+      })
   }
 
   render() {
@@ -60,6 +50,7 @@ class Search extends Component {
           className="modal-trigger transparent" // to trigger the Modal
         >
         </Button>
+
         {/* modal to enter text to search */}
         <Modal
           id="modal-search"
@@ -72,18 +63,24 @@ class Search extends Component {
               placeholder="Renseignez votre recherche"
               onChange={this.handleInput}
             />
-            <button
-              // className={`waves-effect waves-light btn-large ${this.state.contentModal ? 'none' : ''}`} 
-              onClick={this.searchArtist}
-            >
-              Trouver Artiste: {this.state.userInput}
-            </button>
           </form>
+          <button
+            // className={`waves-effect waves-light btn-large ${this.state.contentModal ? 'none' : ''}`}
+            className={`waves-effect waves-light btn-large `}
+            onClick={this.searchArtist}
+            > Rechercher {this.state.userInput}
+          </button>
+
+        <div>
+          <p><a href="https://api.songkick.com/api/3.0/events.json?apikey=wg71XpcSqn6Fo8Dt&artist_name=muse"> muse </a></p>
+          <p> userInput: {this.state.userInput} </p>
+          <p> result: {this.state.result} </p>
+        </div>
+
         </Modal>
-        {this.state.contentModal}
-      </div>
+      </div >
     );
   }
 }
 
-export default Search;
+export default SearchEvent;
