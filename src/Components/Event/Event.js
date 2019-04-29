@@ -15,7 +15,7 @@ const Event = (props) => {
 	const Distance = (x1, y1, x2, y2) => {
 		return financial(Math.sqrt(sqr(y2 - y1) + sqr(x2 - x1)));
 	}
-	let favorisArray = []
+	let favorisArray = [];
 	let objetFavorieJSON = { // creation de l'objet json pour stocker l'event
 		title: props.title,
 		image: props.image,
@@ -30,7 +30,7 @@ const Event = (props) => {
 		eventLat: props.eventLat,
 		eventLng: props.eventLng,
 		id: props.id
-	}
+	};
 	// let favorisItem = JSON.stringify(objetFavorieJSON); // transforme objFavorieJson en string json 
 	// localStorage.setItem('favoris', favorisItem);//stock favorisItem avec pour clé d'appelle "favoris"
 	// favorisItem = localStorage.getItem("favoris");// recupere favorisItem via l'appelle de la clé
@@ -50,7 +50,7 @@ const Event = (props) => {
 			localStorage.setItem('favoris', JSON.stringify(favorisArray));
 			//delete favorite
 		}
-	};
+	}
 
 	//structure of the event
 	return (
