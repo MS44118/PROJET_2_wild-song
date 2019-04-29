@@ -26,7 +26,7 @@ class EventModal extends Component {
     let resultEventsApi = this.props.events;
     // let testFav = JSON.parse(localStorage.getItem("favoris")).findIndex((event) => event.reserveLink === event.performance[0] ? event.performance[0].artist.uri : '');
     return (
-      <Modal className="modalSize" trigger={<Button>Trouver les events</Button>}>
+      <Modal className="modalSize" trigger={<Button className="waves-effect waves-light btn-large">Trouver les events</Button>}>
         <h2>Evenement a proximite de {this.state.getCity ? this.state.getCity[0].nom : ''}</h2>
         {resultEventsApi.filter((event) => (
           event.performance[0] ? event.performance[0].displayName : ''

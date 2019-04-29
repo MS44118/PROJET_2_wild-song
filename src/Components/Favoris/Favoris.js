@@ -48,7 +48,11 @@ class Favori extends Component {
               eventLng={event.eventLng ? event.eventLng : ''}
               id={event.id}
             />
+<<<<<<< HEAD
           )) : " Vous n'avez aucun évenement en favoris"}
+=======
+          )) : "Favoris vide"}
+>>>>>>> e73a4da2cfbb49935707b1c7f602bd2c38090458
         </Modal>
       </div>
     );

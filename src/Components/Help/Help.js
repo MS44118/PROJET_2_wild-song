@@ -49,7 +49,7 @@ class Help extends Component {
           </div> */}
           <div>
             <p className="help-title">Version</p>
-            <version>V.0.2</version>
+            <version>V1</version>
           </div>
           <div>
             <p className="help-title">Contributrices/eurs</p>

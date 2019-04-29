@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import { Modal, Button } from "react-materialize";
+import './Search.css';
 import config from '../../config';
 import Event from '../Event/Event';
 
@@ -45,7 +46,7 @@ class Search extends Component {
           href="#modal-search" // link to the ID
           floating //round button + icon color
           large //icon size
-          className="modal-trigger transparent" // to trigger the Modal
+          className="modal-trigger transparent " // to trigger the Modal
         >
         </Button>
         {/* la modal affiche un champs de recherche et un bouton pour la recherche d'evenement par artiste */}
@@ -56,13 +57,15 @@ class Search extends Component {
             placeholder="Renseignez votre recherche"
             onChange={this.onChange}
           />
-          <button 
+          <Button 
             onClick={this.demandeApi}
             href='#modalEventSearch' 
-            className="modal-trigger transparent"
-          >Recherche</button>
+            className="modal-trigger transparent waves-effect waves-light buttonColor "
+          >Recherche</ Button>
           {/* la moddal affiche les evenements rechercher en ce servant du modele visuel etablis dans le component Event */}
-          <Modal id="modalEventSearch" header="Resultats de la recherche" >
+          <Modal id="modalEventSearch" header="Resultats de la recherche" actions={
+            <Button waves="waves-effect waves-light" modal="close" flat>Fermer</Button>
+          } >
             {this.state.events ? this.state.events.map((event, index) => {  // for each event in api, display the title, image, adresse ... 
               return <Event
                 key={index}
