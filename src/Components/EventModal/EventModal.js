@@ -8,7 +8,7 @@ class EventModal extends Component {
   constructor() {
     super();
     this.state = {
-      getCity: null,
+      getCity: null
     };
   };
   //fetch for get the city's location of the user
@@ -24,6 +24,7 @@ class EventModal extends Component {
 
   render() {
     let resultEventsApi = this.props.events;
+    // let testFav = JSON.parse(localStorage.getItem("favoris")).findIndex((event) => event.reserveLink === event.performance[0] ? event.performance[0].artist.uri : '');
     return (
       <Modal className="modalSize" trigger={<Button>Trouver les events</Button>}>
         <h2>Evenement a proximite de {this.state.getCity ? this.state.getCity[0].nom : ''}</h2>
@@ -34,8 +35,8 @@ class EventModal extends Component {
             key={index}// call api and test if object is present and post else display a string empty
             lat={this.props.location.coords.latitude}
             lng={this.props.location.coords.longitude}
-            // eventLat={event.venue.lat ? event.venue.lat : ''}
-            // eventLng={event.venue.lng ? event.venue.lng : ''}
+            eventLat={event.venue.lat ? event.venue.lat : ''}
+            eventLng={event.venue.lng ? event.venue.lng : ''}
             title={event.performance[0] ? event.performance[0].displayName : ''}
             image={event.performance[0] ? event.performance[0].artist.id : ''}
             address1={event.venue ? event.venue.displayName : ''}
@@ -43,7 +44,8 @@ class EventModal extends Component {
             date={event.start ? event.start.date : ''}
             time={event.start ? event.start.time : ''}
             reserveLink={event.performance[0] ? event.performance[0].artist.uri : ''}
-          // star={favorisArr.findIndex(star => star.event.performance[0].artist.uri=== favorisArr.reserveLink) ? true : false}
+            id={event.id}
+            star={JSON.parse(localStorage.getItem("favoris")) ? JSON.parse(localStorage.getItem("favoris")).findIndex((fav) => fav.id === event.id) >= 0 ? true : false : ''}
           />
         ))}
       </Modal>

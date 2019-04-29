@@ -6,16 +6,13 @@ class Favori extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showFavori: false,
-
+      showFavori: false
     };
   };
 
   //méthode pour activer la modale
   showFavoriMenu = () => {
-    this.setState({
-      showFavori: !this.state.showFavori
-    });
+    this.setState({ showFavori: !this.state.showFavori });
   }
 
   render() {
@@ -49,6 +46,7 @@ class Favori extends Component {
               lng={event.lng ? event.lng : ''}
               eventLat={event.eventLat ? event.eventLat : ''}
               eventLng={event.eventLng ? event.eventLng : ''}
+              id={event.id}
             />
           )) : " Vous n'avez aucun évenement en favoris"}
         </Modal>

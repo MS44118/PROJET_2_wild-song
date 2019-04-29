@@ -17,15 +17,11 @@ class Help extends Component {
   }
   //here we find the action to display the modal help
   handleShowModalHelpOnClick = () => {
-    this.setState({
-      showModalHelp: !this.state.showModalHelp
-    });
+    this.setState({ showModalHelp: !this.state.showModalHelp });
   }
   //here we find the action on the toggle dark mode ( functionnality not developped actually)
   toggle = () => {
-    this.setState({
-      pressed: !this.setState.pressed
-    });
+    this.setState({ pressed: !this.setState.pressed });
   }
 
   render() {
@@ -44,7 +40,6 @@ class Help extends Component {
         </Button>
         <Modal id="modal1" header="Bienvenue dans l'aide">
           <p>Vous trouverez ici les informations d'aide pour utiliser de manière optimale l'application.</p>
-
           {/* <div>
             <p className="help-title">options</p>
             <p>Mode nuit</p>
@@ -56,7 +51,6 @@ class Help extends Component {
             <p className="help-title">Version</p>
             <version>V.0.2</version>
           </div>
-
           <div>
             <p className="help-title">Contributrices/eurs</p>
             <div class="row">

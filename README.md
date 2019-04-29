@@ -1,16 +1,6 @@
-# HOW TO USE VAR IN CSS
-It's pretty easy, you just have to put in css: var(--name-of-color).
-Look at the color palette the first color is : var(--main-bg-color), the second color var(--second-bg-color), the third var(--third-bg-color), and for the "saillance" color var(--button-bg-color).
-
-You can ask Baptiste if you have any problems with variable in CSS.
-
-
-
 # LivinSound
 
 Application Web / Mobile locate and display all the musical events and save our favorites events
-
-## Getting Started
 
 
 ### Copy and Run the project on your local machine
@@ -35,17 +25,13 @@ npm install materialize-css
 npm install react-materialize
 ```
 
-**THIS NEED IMPROVEMENT!!!**\
-**End with an example of getting some data out of the system or using it for a little demo**
-
-
 
 ### Create your API Key File:
 
-**THIS NEED IMPROVEMENT!!!**
-**src/config.js to include the API Key from SongKick:** 
+if you work on your local machine, create /src/config.js to include the API Key from SongKick (with the right Key):
 ```
-const apiKey = ""; 
+const config = "xxxxxxxxxx"
+export default config ;
 ```
 
 
@@ -74,67 +60,56 @@ const apiKey = "";
 - Learn how to read documentation
 
 
-
-## Running the tests
-
-**THIS NEED IMPROVEMENT!!!**\
-**Explain how to run the automated tests for this system**
-
-### Break down into end to end tests
-
-**THIS NEED IMPROVEMENT!!!**\
-**Explain what these tests test and why**
-
-```
-Give an example
-```
-
-### And coding style tests
-
-**THIS NEED IMPROVEMENT!!!**\
-**Explain what these tests test and why**
-
-```
-Give an example
-```
-
-
-## Built With
+### Built With
 
 * [React](https://reactjs.org/) - A JavaScript library for building user interfaces
 * [Materialize](https://react-materialize.github.io/) - A modern responsive front-end framework based on Material Design
 * [Songkick API](https://www.songkick.com/developer) - Gives you easy access to the biggest live music database in the world
 
 
-## Contributing
-
-Please read [BLABLA.md](https://blabla.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-
 ## Authors
 
-* **Baptiste** - *Initial work* - [Wild Code School](https://wildcodeschool.fr/)
-* **Cedric** - *Initial work* - [Wild Code School](https://wildcodeschool.fr/)
-* **Maelenn** - *Initial work* - [Wild Code School](https://wildcodeschool.fr/)
-* **Samantha** - *Initial work* - [Wild Code School](https://wildcodeschool.fr/)
-* **Tanguy** - *Initial work* - [Wild Code School](https://wildcodeschool.fr/)
+This work is the result of [Wild Code School](https://wildcodeschool.fr/) Project
+
+* **Baptiste** - [LinkedIn](https://www.linkedin.com/in/baptiste-lagisquet-bb2a8937/)
+* **Cedric** - [LinkedIn](https://www.linkedin.com/in/c%C3%A9dric-gardianot/)
+* **Maelenn** - [LinkedIn](https://www.linkedin.com/in/maelenn-sallic/)
+* **Samantha** - [LinkedIn](https://www.linkedin.com/in/samantha-besnard/)
+* **Tanguy** - [LinkedIn](https://www.linkedin.com/in/tanguy-j-081087167/)
 
 See also the list of [contributors](https://github.com/WildCodeSchool/nantes-0219-js-wild-song/contributors) who participated in this project.
 
-## License
-
-**THIS NEED IMPROVEMENT!!!**\
-**This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details**
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Special Thanks to **Simon** - *Teacher/Trainer* - [GitHub](https://github.com/HitAngry)
+* Need help to layout your README.md: check **Billie Thompson** work on [GitHub](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2#file-readme-template-md)
 
 
-# need help to layout your README.md ? 
+### HOW TO USE VAR IN CSS
 
-Check **Billie Thompson** work - [https://gist.github.com/PurpleBooth/109311bb0361f32d87a2#file-readme-template-md]
+Look at the color palette :
+- the first color is : var(--main-bg-color)
+- the second color var(--second-bg-color)
+- the third var(--third-bg-color)
+- for the "saillance" color var(--button-bg-color)
+
+To define variables in CSS:
+```
+:root {
+  --main-bg-color: #f57c00;
+  --second-bg-color: #ff9800;
+  --third-bg-color: #ffb74d;
+  --button-bg-color: #40c4ff;
+}
+```
+To use the variables: 
+
+```
+button {
+  background-color: var(--button-bg-color) !important;
+}
+```
+
 
 

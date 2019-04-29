@@ -4,6 +4,7 @@ import Favoris from '../Favoris/Favoris';
 import Help from '../Help/Help';
 // import Filter from '../Filter/Filter';
 import Search from '../Search/Search';
+// import SearchEvent from '../Search/SearchEvent';
 import './NavBar.css';
 import logo from '../../Images/LivinSoundTransp.png';
 
@@ -20,9 +21,15 @@ class NavBar extends Component {
         {/* <NavItem>
           <Filter />
         </NavItem> */}
+        
         <NavItem>
           <Search  />
         </NavItem>
+
+        {/* <NavItem>
+          <SearchEvent  />
+        </NavItem> */}
+
         <NavItem >
           <Help />
         </NavItem>
