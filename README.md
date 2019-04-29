@@ -2,8 +2,6 @@
 
 Application Web / Mobile locate and display all the musical events and save our favorites events
 
-## Getting Started
-
 
 ### Copy and Run the project on your local machine
 
@@ -26,6 +24,7 @@ if Materialize is not in package.json:
 npm install materialize-css
 npm install react-materialize
 ```
+
 
 ### Create your API Key File:
 
@@ -61,35 +60,7 @@ export default config ;
 - Learn how to read documentation
 
 
-## HOW TO USE VAR IN CSS
-
-Look at the color palette :
-- the first color is : var(--main-bg-color), 
-- the second color var(--second-bg-color),
-- the third var(--third-bg-color), 
-- for the "saillance" color var(--button-bg-color).
-
-
-To define variables in CSS:
-```
-:root {
-  --main-bg-color: #f57c00;
-  --second-bg-color: #ff9800;
-  --third-bg-color: #ffb74d;
-  --button-bg-color: #40c4ff;
-}
-```
-To use the variables: 
-
-```
-button {
-  background-color: var(--button-bg-color) !important;
-}
-```
-You can ask Baptiste if you have any problems with variable in CSS.
-
-
-## Built With
+### Built With
 
 * [React](https://reactjs.org/) - A JavaScript library for building user interfaces
 * [Materialize](https://react-materialize.github.io/) - A modern responsive front-end framework based on Material Design
@@ -112,6 +83,33 @@ See also the list of [contributors](https://github.com/WildCodeSchool/nantes-021
 ## Acknowledgments
 
 * Special Thanks to **Simon** - *Teacher/Trainer* - [GitHub](https://github.com/HitAngry)
-* Need help to layout your README.md: check **Billie Thompson** work - [https://gist.github.com/PurpleBooth/109311bb0361f32d87a2#file-readme-template-md]
+* Need help to layout your README.md: check **Billie Thompson** work on [GitHub](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2#file-readme-template-md)
+
+
+### HOW TO USE VAR IN CSS
+
+Look at the color palette :
+- the first color is : var(--main-bg-color)
+- the second color var(--second-bg-color)
+- the third var(--third-bg-color)
+- for the "saillance" color var(--button-bg-color)
+
+To define variables in CSS:
+```
+:root {
+  --main-bg-color: #f57c00;
+  --second-bg-color: #ff9800;
+  --third-bg-color: #ffb74d;
+  --button-bg-color: #40c4ff;
+}
+```
+To use the variables: 
+
+```
+button {
+  background-color: var(--button-bg-color) !important;
+}
+```
+
 
 
