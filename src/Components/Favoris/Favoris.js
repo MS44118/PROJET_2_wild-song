@@ -30,7 +30,7 @@ class Favori extends Component {
         >
         </Button> 
         {/* la moddal affiche les evenements en favoris en ce servant du modele visuel etablis dans le component Event */}
-        <Modal id="modal3" header="Evenements en favoris " > 
+        <Modal id="modal3" header="Evènements en favoris" > 
           {JSON.parse(localStorage.getItem("favoris")) ? JSON.parse(localStorage.getItem("favoris")).map((event, index) => ( // for each event in api, display the title, image, adresse ... 
             <Event
               key={index}
@@ -48,11 +48,7 @@ class Favori extends Component {
               eventLng={event.eventLng ? event.eventLng : ''}
               id={event.id}
             />
-<<<<<<< HEAD
-          )) : " Vous n'avez aucun évenement en favoris"}
-=======
-          )) : "Favoris vide"}
->>>>>>> e73a4da2cfbb49935707b1c7f602bd2c38090458
+          )) : "Vous n'avez aucun évènement en favoris"}
         </Modal>
       </div>
     );
