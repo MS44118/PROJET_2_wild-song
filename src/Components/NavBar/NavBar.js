@@ -21,15 +21,12 @@ class NavBar extends Component {
         {/* <NavItem>
           <Filter />
         </NavItem> */}
-        
         <NavItem>
           <Search  />
         </NavItem>
-
         {/* <NavItem>
           <SearchEvent  />
         </NavItem> */}
-
         <NavItem >
           <Help />
         </NavItem>

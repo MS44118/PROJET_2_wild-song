@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './Event.css';
 import { Icon, Button } from 'react-materialize';
+import { ResultStorage } from '../../App';
 
 const Event = (props) => {
+
+	const [storage, setStorage] = useContext(ResultStorage);
 	//initialize hooks for change favorit's star
-	const [favorite, setFavorite] = useState({ star: props.star ? props.star : false });
+	const [favorite, setFavorite] = useState({ star:  props.star ?  props.star : false });
 	//script for get distance between user and the even
 	const financial = (x) => {
 		return Number.parseFloat(x).toFixed(2);
@@ -37,17 +40,20 @@ const Event = (props) => {
 	// let favorisJSON = JSON.parse(favorisItem); // transforme la stringJSON favorisItem en objJSON
 	const addFavorite = () => { // fonction pour ajouter les favoris dans le localStorage si le click du bouton est true
 		if (localStorage.getItem('favoris')) {
-			favorisArray = JSON.parse(localStorage.getItem('favoris'));
+			favorisArray = JSON.parse(localStorage.getItem('favoris'))
+			setStorage(JSON.parse(localStorage.getItem('favoris')));
 			// test if favorisArray contains a value if yes add the valus in favorisArray
 		}
 		if (favorite.star === false) {
 			favorisArray.push(objetFavorieJSON);
-			localStorage.setItem('favoris', JSON.stringify(favorisArray));
+			localStorage.setItem('favoris', JSON.stringify(favorisArray))
+			setStorage(JSON.parse(localStorage.getItem('favoris')));
 			// add favorite
 		} else {
 			let indexFavDelete = favorisArray.findIndex(fav => fav.reserveLink === objetFavorieJSON.reserveLink);
-			favorisArray.splice(indexFavDelete, 1);
-			localStorage.setItem('favoris', JSON.stringify(favorisArray));
+			favorisArray.splice(indexFavDelete, 1)
+			localStorage.setItem('favoris', JSON.stringify(favorisArray))
+			setStorage(JSON.parse(localStorage.getItem('favoris')));
 			//delete favorite
 		}
 	}
@@ -73,11 +79,8 @@ const Event = (props) => {
 					</Button>
 				</div>
 				<div className="offset-s4 col s3">
-					<Button className="colorButton btn" onClick={() => {
-						setFavorite({ star: !favorite.star })
-						addFavorite()
-					}} href="#">
-						<Icon>{favorite.star ? 'star' : 'star_border'}</Icon>
+					<Button className="colorButton btn" onClick={() => {setFavorite({star: !favorite.star}); addFavorite()}} href="#">
+						<Icon>{favorite.star ? 'star'  : 'star_border'}</Icon>
 					</Button>
 				</div>
 			</div>
