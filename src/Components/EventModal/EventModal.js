@@ -10,7 +10,7 @@ class EventModal extends Component {
     this.state = {
       getCity: null,
     };
-  }
+  };
   //fetch for get the city's location of the user
   componentDidMount = () => {
     fetch(`https://geo.api.gouv.fr/communes?lat=${this.props.location.coords.latitude}&lon=${this.props.location.coords.longitude}&fields=nom&format=json&geometry=centre`)
@@ -19,7 +19,6 @@ class EventModal extends Component {
         this.setState({
           getCity: res,
         })
-        console.log(res)
       })
   }
 
@@ -50,6 +49,6 @@ class EventModal extends Component {
       </Modal>
     );
   }
-}
+};
 
 export default EventModal;

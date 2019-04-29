@@ -9,7 +9,7 @@ class Favori extends Component {
       showFavori: false,
 
     };
-  }
+  };
 
   //méthode pour activer la modale
   showFavoriMenu = () => {
@@ -31,8 +31,9 @@ class Favori extends Component {
           className="modal-trigger transparent"  // MODIFIER AVEC LA VARIABLE CSS ---------------
           onClick={this.state.showFavori ? "Favori_list" : "add"}
         >
-        </Button>
-        <Modal id="modal3" header="Evenements en favoris " >
+        </Button> 
+        {/* la moddal affiche les evenements en favoris en ce servant du modele visuel etablis dans le component Event */}
+        <Modal id="modal3" header="Evenements en favoris " > 
           {JSON.parse(localStorage.getItem("favoris")) ? JSON.parse(localStorage.getItem("favoris")).map((event, index) => ( // for each event in api, display the title, image, adresse ... 
             <Event
               key={index}
@@ -48,13 +49,12 @@ class Favori extends Component {
               lng={event.lng ? event.lng : ''}
               eventLat={event.eventLat ? event.eventLat : ''}
               eventLng={event.eventLng ? event.eventLng : ''}
-
             />
-          )) : "Favoris Vide"}
+          )) : " Vous n'avez aucun évenement en favoris"}
         </Modal>
       </div>
     );
   }
-}
+};
 
 export default Favori;

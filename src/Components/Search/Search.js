@@ -1,55 +1,43 @@
+
 import React, { Component } from 'react';
 import { Modal, Button } from "react-materialize";
 import config from '../../config';
-import EventModal from '../EventModal/EventModal';
+import Event from '../Event/Event';
 
 class Search extends Component {
   constructor() {
     super();
     this.state = {
-      // event: null,
-      // artist: null,
-      // location: null,
-      // performance: null,
-      // result: null,
-      userInput: "",
-      contentModal: null
+      events: null,
+      userInput: ""
     }
-  }
-
+  };
   //méthode afin que l'utilisateur puisse renseigner la recherche et userinput s'update à chaque frappe de touche
-  handleInput = (event) => {
-    this.setState({ userInput: event.target.value })
+  onChange = (event) => {
+    this.setState({
+      userInput: event.target.value
+    }, () => console.log(this.state.userInput));
   }
 
   // évite de reloader la page et contrôle la casse du texte
-  // addEvent(event) {
-  //   event.preventDefault();
-  // }
+  addEvent(event) {
+    event.preventDefault();
+  }
 
   //méthode de récupération fetch pour les concerts de l'API songkick, les concerts sont triés par nom d'artise, date, ville
-  searchArtist = () => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => { //return an object with latitude, longitude, & cie
-        fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&artist_name=${this.state.userInput}`)
-          .then(data => data.json())
-          .then(data => {
-            this.setState({
-              contentModal: <EventModal events={data.resultsPage.results.event} location={position} />,
-            });
-            console.log(data);
-          });
-      },
-      (error) => { //return an object with message and code (1=permission denied, 2=position unavailable, 3=timeout)
-        console.log(error);
-      }
-    )
+ demandeApi = () => {
+   fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&artist_name=${this.state.userInput}`)
+      .then(result => result.json())
+      .then(result => {
+        this.setState({
+          events: result.resultsPage.results.event,
+        }, () => console.log(this.state.events))  
+      })
   }
 
   render() {
     return (
       <div>
-        {/* icon loupe to search modal */}
         <Button
           icon="search"
           flat waves="light" //to hide the button raising
@@ -60,31 +48,41 @@ class Search extends Component {
           className="modal-trigger transparent" // to trigger the Modal
         >
         </Button>
-
-        {/* modal to enter text to search */}
-        <Modal
-          id="modal-search"
-          header="Moteur de Recherche"
-        >
-          <form>
-            <input
-              value={this.state.userInput}
-              type="text"
-              placeholder="Renseignez votre recherche"
-              onChange={this.handleInput}
-            />
-            <button
-              // className={`waves-effect waves-light btn-large ${this.state.contentModal ? 'none' : ''}`} 
-              onClick={this.searchArtist}
-            >
-              Trouver Artiste: {this.state.userInput}
-            </button>
-          </form>
+        {/* la modal affiche un champs de recherche et un bouton pour la recherche d'evenement par artiste */}
+        <Modal id="modal-search" header="Moteur de Recherche">
+          <input
+            value={this.state.userInput}
+            type="text"
+            placeholder="Renseignez votre recherche"
+            onChange={this.onChange}
+          />
+          <button 
+            onClick={this.demandeApi}
+            href='#modalEventSearch' 
+            className="modal-trigger transparent"
+          >Recherche</button>
+          {/* la moddal affiche les evenements rechercher en ce servant du modele visuel etablis dans le component Event */}
+          <Modal id="modalEventSearch" header="Resultats de la recherche" >
+            {this.state.events ? this.state.events.map((event, index) => {  // for each event in api, display the title, image, adresse ... 
+              return <Event
+                key={index}
+                title={event.displayName ? event.displayName : ''} // call api and test if object is present and post else display a string empty
+                image={event.performance[0].artist.id ? event.performance[0].artist.id : ''}
+                address1={event.location.city ? event.location.city : ''}
+                date={event.start.date ? event.start.date : ''}
+                time={event.start.time ? event.start.time : ''}
+                reserveLink={event.uri ? event.uri : ''}
+                star={event.star}
+                lat={event.location.lat ? event.location.lat : ''}
+                lng={event.location.lng ? event.location.lng : ''}
+              />
+            }) : "Aucun resultat"}
+          </Modal> 
         </Modal>
-        {this.state.contentModal}
       </div>
     );
   }
-}
+
+};
 
 export default Search;

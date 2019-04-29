@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Modal, Button, Switch } from "react-materialize";
+import { Modal, Button} from "react-materialize";
 import './Help.css';
 import B from '../../Images/BaptisteL.jpeg';
 import C from '../../Images/CedricG.jpeg';
