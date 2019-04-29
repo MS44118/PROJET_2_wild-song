@@ -1,0 +1,15 @@
+.nav-wrapper {
+  background-color: var(--main-bg-color) !important;
+}
+
+.sidenav {
+  background-color: var(--second-bg-color) !important;
+}
+
+.logo {
+  position: absolute;
+  top: -5px;
+  left: 110px;
+  max-width: 80px;
+  max-height: 80px;
+}

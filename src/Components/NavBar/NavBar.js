@@ -1,26 +1,35 @@
 import React, { Component } from "react";
-import { Navbar, NavItem, Icon } from "react-materialize";
-import Favoris from './components/Favoris';
-import Help from './components/Help';
-import Filter from './components/Filter';
+import { Navbar, NavItem } from "react-materialize";
+import Favoris from '../Favoris/Favoris';
+import Help from '../Help/Help';
+// import Filter from '../Filter/Filter';
+import Search from '../Search/Search';
+// import SearchEvent from '../Search/SearchEvent';
+import './NavBar.css';
+import logo from '../../Images/LivinSoundTransp.png';
 
 class NavBar extends Component {
   render() {
     return (
-      <Navbar brand={<a />} alignLinks="right" className="orange darken-2">
+      <Navbar  alignLinks="right" className="orange darken-2">
+        <NavItem>
+          <img className="logo" src={logo} alt="Logo livinsound" />
+        </NavItem>
         <NavItem>
           <Favoris />
         </NavItem>
+        {/* <NavItem>
+          <Filter />
+        </NavItem> */}
+        
         <NavItem>
-          <Icon>
-            <Filter />
-          </Icon>
+          <Search  />
         </NavItem>
-        <NavItem>
-          <Icon>
-            search
-          </Icon>
-        </NavItem>
+
+        {/* <NavItem>
+          <SearchEvent  />
+        </NavItem> */}
+
         <NavItem >
           <Help />
         </NavItem>

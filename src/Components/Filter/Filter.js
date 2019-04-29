@@ -10,11 +10,11 @@ class Filter extends Component {
   }
 
   //here we find the method to display the modal filter
-  showFilteredMenu = () => {
-    this.setState({
-      showFilter: !this.state.showFilter
-    });
-  }
+  // showFilteredMenu = () => {
+  //   this.setState({
+  //     showFilter: !this.state.showFilter
+  //   });
+  // }
 
   render() {
     return (
@@ -23,14 +23,14 @@ class Filter extends Component {
           icon="filter_list"
           flat waves="light" //cache le button
           node="a" //to create/activate the href
-          href="#modal2"
+          href="#modal-filter"
           floating //round button
           large //size
           className="modal-trigger transparent"  // MODIFIER AVEC LA VARIABLE CSS ---------------
           onClick={this.state.showFilter ? "filter_list" : "add"}
         >
         </Button>
-        <Modal id="modal2" header="Bienvenue dans la recherche">
+        <Modal id="modal-filter" header="Activer/Désactiver Filtres">
           <Select onChange={this.onChange}>
             <option value="" disabled selected>
               Choose your option

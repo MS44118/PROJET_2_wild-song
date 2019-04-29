@@ -1,0 +1,17 @@
+.help-title {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.card-action {
+  font-weight: bold !important;
+  text-shadow: black 0.1em 0.1em 0.5em !important;
+  background-color: var(--main-bg-color) !important;
+}
+
+.card-title {
+  color: white !important;
+  text-shadow: black 0em 0em 0.8em !important;
+  font-weight: bold !important;
+}
