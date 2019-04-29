@@ -31,6 +31,7 @@ const Event = (props) => {
 		lng: props.lng,
 		eventLat: props.eventLat,
 		eventLng: props.eventLng,
+		id: props.id,
 	}
 	// let favorisItem = JSON.stringify(objetFavorieJSON); // transforme objFavorieJson en string json 
 	// localStorage.setItem('favoris', favorisItem);//stock favorisItem avec pour clé d'appelle "favoris"
@@ -73,7 +74,7 @@ const Event = (props) => {
 						Reserver
 					</Button>
 				</div>
-				<div className="offset-s2 col s3">
+				<div className="offset-s4 col s3">
 					<Button className="colorButton btn" onClick={() => {setFavorite({star: !favorite.star})
 					 addFavorite()}} href="#">
 						<Icon>{favorite.star ? 'star'  : 'star_border'}</Icon>

@@ -48,6 +48,7 @@ class Favori extends Component {
               lng={event.lng ? event.lng : ''}
               eventLat={event.eventLat ? event.eventLat : ''}
               eventLng={event.eventLng ? event.eventLng : ''}
+              id={event.id}
 
             />
           )) : "Favoris Vide"}
