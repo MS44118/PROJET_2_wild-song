@@ -42,7 +42,6 @@ class Search extends Component {
         <Button
           icon="search"
           flat waves="light" //to hide the button raising
-          node="a" //to activate the href
           href="#modal-search" // link to the ID
           floating //round button + icon color
           large //icon size
@@ -64,7 +63,7 @@ class Search extends Component {
           >Recherche</ Button>
           {/* la moddal affiche les evenements rechercher en ce servant du modele visuel etablis dans le component Event */}
           <Modal id="modalEventSearch" header="Resultats de la recherche" actions={
-            <Button waves="waves-effect waves-light" modal="close" flat>Fermer</Button>
+            <Button waves="light" modal="close" flat>Fermer</Button>
           } >
             {this.state.events ? this.state.events.map((event, index) => {  // for each event in api, display the title, image, adresse ... 
               return <Event

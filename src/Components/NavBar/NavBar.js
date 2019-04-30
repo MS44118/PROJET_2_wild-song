@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Navbar, NavItem } from "react-materialize";
-import Favoris from '../Favoris/Favoris';
+import Favori from '../Favoris/Favoris';
 import Help from '../Help/Help';
 // import Filter from '../Filter/Filter';
 import Search from '../Search/Search';
@@ -16,7 +16,7 @@ class NavBar extends Component {
           <img className="logo" src={logo} alt="Logo livinsound" />
         </NavItem>
         <NavItem>
-          <Favoris />
+          <Favori />
         </NavItem>
         {/* <NavItem>
           <Filter />

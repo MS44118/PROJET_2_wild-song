@@ -30,7 +30,6 @@ class Help extends Component {
         <Button
           icon="help_outline"
           flat waves="light" //hidden action button
-          node="a" //to create/activate the href
           href="#modal1"
           floating //round button
           large //size
@@ -49,81 +48,81 @@ class Help extends Component {
           </div> */}
           <div>
             <p className="help-title">Version</p>
-            <version>V1</version>
+            <p>V1</p>
           </div>
           <div>
             <p className="help-title">Contributrices/eurs</p>
-            <div class="row">
-              <div class="col s12 m4">
-                <div class="card">
-                  <div class="card-image">
+            <div className="row">
+              <div className="col s12 m4">
+                <div className="card">
+                  <div className="card-image">
                     <img src={B} alt="Baptiste L." />
-                    <span class="card-title">Baptiste</span>
+                    <span className="card-title">Baptiste</span>
                   </div>
                   {/* <div class="card-content">
                     <p>Baptiste L.</p>
                   </div> */}
-                  <div class="card-action">
+                  <div className="card-action">
                     <p><a href="https://github.com/blagisquet">GitHub</a></p>
                     <p><a href="https://www.linkedin.com/in/baptiste-lagisquet-bb2a8937/">LinkedIn</a></p>
                   </div>
                 </div>
               </div>
-              <div class="col s12 m4">
-                <div class="card">
-                  <div class="card-image">
+              <div className="col s12 m4">
+                <div className="card">
+                  <div className="card-image">
                     <img src={C} alt="Cedric G." />
-                    <span class="card-title">Cédric</span>
+                    <span className="card-title">Cédric</span>
                   </div>
-                  {/* <div class="card-content">
+                  {/* <div className="card-content">
                     <p>Cédric G.</p>
                   </div> */}
-                  <div class="card-action">
+                  <div className="card-action">
                     <p><a href="https://github.com/cedricgdt">GitHub</a></p>
                     <p><a href="https://www.linkedin.com/in/c%C3%A9dric-gardianot/">LinkedIn</a></p>
                   </div>
                 </div>
               </div>
-              <div class="col s12 m4">
-                <div class="card">
-                  <div class="card-image">
+              <div className="col s12 m4">
+                <div className="card">
+                  <div className="card-image">
                     <img src={M} alt="Maelenn S." />
-                    <span class="card-title">Maelenn</span>
+                    <span className="card-title">Maelenn</span>
                   </div>
-                  {/* <div class="card-content">
+                  {/* <div className="card-content">
                     <p>Maelenn S.</p>
                   </div> */}
-                  <div class="card-action">
+                  <div className="card-action">
                     <p><a href="https://github.com/MS44118">GitHub</a></p>
                     <p><a href="https://www.linkedin.com/in/maelenn-sallic/">LinkedIn</a></p>
                   </div>
                 </div>
               </div>
-              <div class="col s12 m4">
-                <div class="card">
-                  <div class="card-image">
+              <div className="col s12 m4">
+                <div className="card">
+                  <div className="card-image">
                     <img src={S} alt="Samantha B." />
-                    <span class="card-title">Samantha</span>
+                    <span className="card-title">Samantha</span>
                   </div>
-                  {/* <div class="card-content">
+                  {/* <div className="card-content">
                     <p>Samantha B.</p>
                   </div> */}
-                  <div class="card-action">
+                  <div className="card-action">
                     <p><a href="https://github.com/Besnard-Samantha">GitHub</a></p>
                     <p><a href="https://www.linkedin.com/in/samantha-besnard/">LinkedIn</a></p>
                   </div>
                 </div>
               </div>
-              <div class="col s12 m4">
-                <div class="card">
-                  <div class="card-image">
+              <div className="col s12 m4">
+                <div className="card">
+                  <div className="card-image">
                     <img src={T} alt="Tanguy J." />
-                    <span class="card-title">Tanguy</span>
+                    <span className="card-title">Tanguy</span>
                   </div>
-                  {/* <div class="card-content">
+                  {/* <div className="card-content">
                     <p>Tanguy J.</p>
                   </div> */}
-                  <div class="card-action">
+                  <div className="card-action">
                     <p><a href="https://github.com/tanguyJouvin">GitHub</a></p>
                     <p><a href="https://www.linkedin.com/in/tanguy-j-081087167/">LinkedIn</a></p>
                   </div>
