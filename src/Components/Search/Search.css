@@ -1,0 +1,6 @@
+.buttonColor {
+  background-color: var(--button-bg-color) !important;
+}
+.btn-flat {
+    color:white;
+}

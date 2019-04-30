@@ -119,10 +119,21 @@
 
 /*Media for desktop*/
 
-@media only screen and (min-device-width: 993px) {
+@media only screen and (min-device-width: 993px) and (max-device-width: 1800px) {
   .loader {
     left: 51%;
-    top: 85%;
+    top: 80%;
+    width: 110px;
+    height: 90px;
+  }
+}
+
+/*Media for old desktop*/
+
+@media only screen and (min-device-width: 1801px) {
+  .loader {
+    left: 51%;
+    top: 75%;
     width: 110px;
     height: 90px;
   }
