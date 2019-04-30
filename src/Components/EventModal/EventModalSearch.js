@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Modal, Button } from "react-materialize";
 import Event from "../Event/Event";
-import './EventModal.css'
+import './EventModal.css';
 
 // This component call the component Event for display as many times as there is a geolocate event
 class EventModalSearch extends Component {

@@ -25,7 +25,7 @@ const Search = () => {
    fetch(`https://api.songkick.com/api/3.0/events.json?apikey=${config}&artist_name=${userInput}`)
     .then(result => result.json())
     .then(result => {
-        setEvents(result.resultsPage.results.event)
+        setEvents(result.resultsPage.results.event);
     })
   }
 
@@ -76,7 +76,6 @@ const Search = () => {
       </Modal>
     </div>
   );
-
 };
 
 export default Search;

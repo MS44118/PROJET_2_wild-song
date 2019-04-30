@@ -14,7 +14,7 @@ const EventModal = (props) => {
     fetch(`https://geo.api.gouv.fr/communes?lat=${props.location.coords.latitude}&lon=${props.location.coords.longitude}&fields=nom&format=json&geometry=centre`)
     .then(res => res.json())
     .then((res) => {
-      setGetCity(res)
+      setGetCity(res);
     })
   }, [])
 
