@@ -7,7 +7,7 @@ const Event = (props) => {
 
 	const [storage, setStorage] = useContext(ResultStorage);
 	//initialize hooks for change favorit's star
-	const [favorite, setFavorite] = useState({ star:  props.star ?  props.star : false });
+	const [favorite, setFavorite] = useState(props.star);
 	//script for get distance between user and the even
 	const financial = (x) => {
 		return Number.parseFloat(x).toFixed(2);
@@ -27,7 +27,7 @@ const Event = (props) => {
 		date: props.date,
 		time: props.time,
 		reserveLink: props.reserveLink,
-		star: favorite,
+		star: true,
 		lat: props.lat,
 		lng: props.lng,
 		eventLat: props.eventLat,
@@ -39,21 +39,27 @@ const Event = (props) => {
 	// favorisItem = localStorage.getItem("favoris");// recupere favorisItem via l'appelle de la clé
 	// let favorisJSON = JSON.parse(favorisItem); // transforme la stringJSON favorisItem en objJSON
 	const addFavorite = () => { // fonction pour ajouter les favoris dans le localStorage si le click du bouton est true
-		if (localStorage.getItem('favoris')) {
-			favorisArray = JSON.parse(localStorage.getItem('favoris'))
-			setStorage(JSON.parse(localStorage.getItem('favoris')));
-			// test if favorisArray contains a value if yes add the valus in favorisArray
-		}
-		if (favorite.star === false) {
+		// if (localStorage.getItem('favoris')) {
+		// 	favorisArray = JSON.parse(localStorage.getItem('favoris'))
+		// 	setStorage(JSON.parse(localStorage.getItem('favoris')));
+		// 	// test if favorisArray contains a value if yes add the valus in favorisArray
+		// }
+		if (favorite === false) {
+			setFavorite(!favorite);
+			favorisArray = JSON.parse(localStorage.getItem('favoris')) || [];
 			favorisArray.push(objetFavorieJSON);
 			localStorage.setItem('favoris', JSON.stringify(favorisArray))
-			setStorage(JSON.parse(localStorage.getItem('favoris')));
+			setStorage(favorisArray);
 			// add favorite
 		} else {
-			let indexFavDelete = favorisArray.findIndex(fav => fav.reserveLink === objetFavorieJSON.reserveLink);
+			setFavorite(false)
+			favorisArray = JSON.parse(localStorage.getItem('favoris')) || []
+			let indexFavDelete = favorisArray.findIndex(fav => fav.id === objetFavorieJSON.id);
+			console.log(indexFavDelete)
 			favorisArray.splice(indexFavDelete, 1)
+			// favorisArray[indexFavDelete].star === true;
 			localStorage.setItem('favoris', JSON.stringify(favorisArray))
-			setStorage(JSON.parse(localStorage.getItem('favoris')));
+			setStorage(favorisArray);
 			//delete favorite
 		}
 	}
@@ -79,8 +85,8 @@ const Event = (props) => {
 					</Button>
 				</div>
 				<div className="offset-s4 col s3">
-					<Button className="colorButton btn" onClick={() => {setFavorite({star: !favorite.star}); addFavorite()}} href="#">
-						<Icon>{favorite.star ? 'star'  : 'star_border'}</Icon>
+					<Button className="colorButton btn" onClick={() => addFavorite()} href="#">
+						<Icon>{favorite ? 'star'  : 'star_border'}</Icon>
 					</Button>
 				</div>
 			</div>
