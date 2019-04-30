@@ -40,7 +40,7 @@ const EventModal = (props) => {
           time={event.start ? event.start.time : ''}
           reserveLink={event.performance[0] ? event.performance[0].artist.uri : ''}
           id={event.id}
-          star={storage ? storage.findIndex((fav) => fav.id === event.id) >= 0 ? true : false : ''}
+          star={storage ? storage.findIndex((fav) => fav.id === event.id) >= 0 ? true : false : false}
         />
       ))}
     </Modal>
