@@ -8,7 +8,6 @@ const Event = (props) => {
 	const [storage, setStorage] = useContext(ResultStorage);
 	//initialize hooks for change favorit's star
 	const [favorite, setFavorite] = useState(props.star);
-	console.log(props)
 	//script for get distance between user and the even
 	const financial = (x) => {
 		return Number.parseFloat(x).toFixed(2);
@@ -47,18 +46,17 @@ const Event = (props) => {
 		// }
 		if (favorite === false) {
 			setFavorite(!favorite);
-
 			favorisArray = JSON.parse(localStorage.getItem('favoris')) || [];
 			favorisArray.push(objetFavorieJSON);
 			localStorage.setItem('favoris', JSON.stringify(favorisArray))
 			setStorage(favorisArray);
 			// add favorite
 		} else {
-			let favorisArray = JSON.parse(localStorage.getItem('favoris'))
+			setFavorite(false)
+			favorisArray = JSON.parse(localStorage.getItem('favoris')) || []
 			let indexFavDelete = favorisArray.findIndex(fav => fav.id === objetFavorieJSON.id);
 			console.log(indexFavDelete)
 			favorisArray.splice(indexFavDelete, 1)
-
 			// favorisArray[indexFavDelete].star === true;
 			localStorage.setItem('favoris', JSON.stringify(favorisArray))
 			setStorage(favorisArray);

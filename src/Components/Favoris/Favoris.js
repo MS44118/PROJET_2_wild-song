@@ -13,7 +13,6 @@ const Favori = () => {
       <Button
         icon="star_border"
         flat waves="light" //cache le button
-        node="a" //to create/activate the href
         href="#modal3"
         floating //round button
         large //size
